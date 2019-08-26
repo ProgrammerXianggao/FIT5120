@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Gender";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Gender is:</h2>
+
+<h3>@ViewBag.message</h3>
+<div style="margin-left:100px">
+    <button id="btn1" class="btn btn-success" style="width:200px">FEMALE</button>
+    <br>
+    <br>
+    <button id="btn2" class="btn btn-success" style="width:200px">MALE</button>
+    <br>
+    <br>
+</div>
+@section Scripts {
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                window.location.href = "/home/gendernext?method=FEMALE";
+            });
+        });
+        $(function () {
+            $('#btn2').click(function () {
+                window.location.href = "/home/gendernext?method=MALE";
+            });
+        });
+
+    </script>
+}
+

@@ -1,0 +1,30 @@
+﻿@model withU.Models.quiz2
+@{
+    ViewBag.Title = "quiz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>@ViewBag.message</h3>
+<h2>quiz</h2>
+
+@using (Html.BeginForm("Survey", "Home", FormMethod.Post))
+{
+    <b>Want Additional Benefit: </b><br />
+    <span>@Html.CheckBoxFor(m => m.first, false) Presenting with injuries inflicted by self or others </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.second, false) Substabce or alcohol affected </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.third, false) Behavioural disturbance </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.forth, false) Stating intention to harm self or others </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.fifth, false) Hyper-vigilance </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.sixth, false) Suspected of having weapons </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.seventh, false) Confusion </span>
+    <br>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Next" class="btn btn-default" style="padding-top:10px" />
+    </div>
+
+}

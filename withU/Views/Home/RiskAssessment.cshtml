@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "RiskAssessment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>RiskAssessment</h2>
+<form>
+    <div class="form-group row">
+        <label for="GenderSelect" class="col-sm-2 col-form-label">Your Gender</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="GenderSelect">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="GenderSelect" class="col-sm-2 col-form-label">Your Age</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="GenderSelect">
+                <option>18-25</option>
+                <option>26-35</option>
+                <option>36-50</option>
+                <option>50+</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="GenderSelect" class="col-sm-2 col-form-label">Patient Gender</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="GenderSelect">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="GenderSelect" class="col-sm-2 col-form-label">Patient Age</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="GenderSelect">
+                <option>18-25</option>
+                <option>26-35</option>
+                <option>36-50</option>
+                <option>50+</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Estimate" class="btn btn-default" style="padding-top:10px" />
+        </div>
+    </div>
+    <div>
+    <h2 style = "color:red" > 
+    @Html.Label("Result is :")
+    @Html.DisplayFor(x => x.Result) </h2> 
+    </div>
+</form>
