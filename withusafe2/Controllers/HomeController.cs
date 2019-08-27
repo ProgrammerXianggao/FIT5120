@@ -83,15 +83,25 @@ namespace withusafe2.Controllers
             var offenceRate = locationinfo[0].OffenceRate;
             var aveAreaRate = 0.006839;
             ViewBag.Checkone = "";
-            if (highRisk.First == 1) { ViewBag.Checkone += checkboxones[0].content; }
-            if (highRisk.Second == 1) { ViewBag.Checkone += checkboxones[0].content; }
-            if (highRisk.Third == 1) { ViewBag.Checkone += checkboxones[0].content; }
-            if (highRisk.Fourth == 1) { ViewBag.Checkone += checkboxones[0].content; }
-            if (highRisk.Fifth == 1) { ViewBag.Checkone += checkboxones[0].content; }
-            if (highRisk.Sixth == 1) { ViewBag.Checkone += checkboxones[0].content; }
-            if (highRisk. == 1) { ViewBag.Checkone += checkboxones[0].content; }
-
-
+            if (highRisk.First == 1) { ViewBag.Checkone += checkboxones[0].content + "; "; }
+            if (highRisk.Second == 1) { ViewBag.Checkone += checkboxones[1].content + "; "; }
+            if (highRisk.Third == 1) { ViewBag.Checkone += checkboxones[2].content + "; "; }
+            if (highRisk.Fourth == 1) { ViewBag.Checkone += checkboxones[3].content + "; "; }
+            if (highRisk.Fifth == 1) { ViewBag.Checkone += checkboxones[4].content + "; "; }
+            if (highRisk.Sixth == 1) { ViewBag.Checkone += checkboxones[5].content + "; "; }
+            if (highRisk.Seventh == 1) { ViewBag.Checkone += checkboxones[6].content; }
+            ViewBag.Checkone = ViewBag.Checkone.TrimEnd(';');
+            ViewBag.Checktwo = "";
+            if (precaution.First == 0) { ViewBag.Checktwo += checkboxtwos[0].content += "; "; }
+            if (precaution.Second == 0) { ViewBag.Checktwo += checkboxtwos[1].content += "; "; }
+            if (precaution.Third == 0) { ViewBag.Checktwo += checkboxtwos[2].content += "; "; }
+            if (precaution.Fourth == 0) { ViewBag.Checktwo += checkboxtwos[3].content += "; "; }
+            if (precaution.Fifth == 0) { ViewBag.Checktwo += checkboxtwos[4].content += "; "; }
+            if (precaution.Sixth == 0) { ViewBag.Checktwo += checkboxtwos[5].content += "; "; }
+            if (precaution.Seventh == 0) { ViewBag.Checktwo += checkboxtwos[6].content += "; "; }
+            if (precaution.Eighth == 0) { ViewBag.Checktwo += checkboxtwos[7].content += "; "; }
+            if (precaution.Nineth == 0) { ViewBag.Checktwo += checkboxtwos[8].content ; }
+            ViewBag.Checktwo = ViewBag.Checktwo.TrimEnd(';');
 
             if ((double)offenceRate > aveAreaRate) { ViewBag.noticification = "The Risk Index of this suburb is higher than average!"; }
             else { ViewBag.noticification = "The Risk Index of this suburb is higher than average!"; }
@@ -138,6 +148,7 @@ namespace withusafe2.Controllers
             ViewBag.Message = "Report";
             ViewBag.Test = "Test";
             ViewBag.Gender = gender.genderr;
+            if (ViewBag.Gender == "prefer not to say") { ViewBag.Gender ="Your"; }
             ViewBag.Age = age.Age1;
             ViewBag.RiskRate = result;
             ViewBag.Location = locationinfo[0].Suburb;

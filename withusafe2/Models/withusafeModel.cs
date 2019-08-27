@@ -86,6 +86,10 @@ namespace withusafe2.Models
                 .Property(e => e.Sixth)
                 .HasPrecision(1, 0);
 
+            modelBuilder.Entity<HighRisk>()
+                .Property(e => e.Seventh)
+                .HasPrecision(1, 0);
+
             modelBuilder.Entity<Precaution>()
                 .Property(e => e.First)
                 .HasPrecision(1, 0);

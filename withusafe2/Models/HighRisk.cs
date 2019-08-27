@@ -28,5 +28,7 @@ namespace withusafe2.Models
 
         [Column(TypeName = "numeric")]
         public decimal? Sixth { get; set; }
+        [Column(TypeName = "numeric")]
+        public decimal? Seventh { get; set; }
     }
 }
