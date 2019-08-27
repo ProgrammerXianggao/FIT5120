@@ -1,0 +1,14 @@
+﻿
+@{
+
+                ViewBag.Title = "Report";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="">Your Risk Precaution Report:</h2>
+<h3>Based on your information, this is you risk precaution report.</h3>
+<h3>Violence & Aggression rate in <font size="6" color="red">@ViewBag.Location</font> area is <font size="6" color="red">@ViewBag.AreaRate</font></h3>
+<h3><font size="6" color="red">@ViewBag.Gender</font> between <font size="6" color="red">@ViewBag.Age</font> years old has <font size="6" color="red">@ViewBag.RiskRate%</font> Violence rate</h3>
+<H3>@ViewBag.Message</H3>
+<br>
+<H3>@ViewBag.Test</H3>

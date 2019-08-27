@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Location";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Please Select a Suburb</h2>
+
+
+<div style="margin-left:100px">
+    <button id="btn1" class="btn btn-success" style="width:200px">Barwon</button>
+    <br>
+    <br>
+    <button id="btn2" class="btn btn-success" style="width:200px">Central Highlands</button>
+    <br>
+    <br>
+    <button id="btn3" class="btn btn-success" style="width:200px">41-50</button>
+    <br>
+    <br>
+    <button id="btn4" class="btn btn-success" style="width:200px">51-60</button>
+    <br>
+    <br>
+    <button id="btn5" class="btn btn-success" style="width:200px; text-align:center">prefer not to say</button>
+</div>
+@section Scripts {
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                window.location.href = "/home/test?method=20";
+            });
+        });
+        $(function () {
+            $('#btn2').click(function () {
+                window.location.href = "/home/test?method=30";
+            });
+        });
+        $(function () {
+            $('#btn3').click(function () {
+                window.location.href = "/home/test?method=40";
+            });
+        });
+        $(function () {
+            $('#btn4').click(function () {
+                window.location.href = "/home/test?method=50";
+            });
+        });
+        $(function () {
+            $('#btn5').click(function () {
+                window.location.href = "/home/test?method=xx";
+            });
+        });
+    </script>
+}

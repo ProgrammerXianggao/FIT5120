@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -201,16 +203,41 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Age.cs" />
+    <Compile Include="Models\Checkboxone.cs" />
+    <Compile Include="Models\Checkboxtwo.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\GenderAgeSafety.cs" />
+    <Compile Include="Models\HighRisk.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Precaution.cs" />
+    <Compile Include="Models\quiz2.cs" />
+    <Compile Include="Models\quizz.cs" />
+    <Compile Include="Models\withusafeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\withusafe.mdf" />
+    <Content Include="App_Data\withusafe_log.ldf">
+      <DependentUpon>withusafe.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\picture\color_border.jpg" />
+    <Content Include="Content\picture\feature-icons.png" />
+    <Content Include="Content\picture\icon.png" />
+    <Content Include="Content\picture\iconnew.png" />
+    <Content Include="Content\picture\picjumbo-bg5.png" />
+    <Content Include="Content\picture\story1.jpg" />
+    <Content Include="Content\picture\story2.png" />
+    <Content Include="Content\picture\story3.png" />
+    <Content Include="Content\picture\watch.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -265,10 +292,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Location.cshtml" />
+    <Content Include="Views\Home\Gender.cshtml" />
+    <Content Include="Views\Home\Age.cshtml" />
+    <Content Include="Views\Home\quiz.cshtml" />
+    <Content Include="Views\Home\quizz.cshtml" />
+    <Content Include="Views\Home\Report.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

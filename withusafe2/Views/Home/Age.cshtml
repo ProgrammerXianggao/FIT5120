@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Age";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<h2>Your Age Group is:</h2>
+
+
+<div style="margin-left:100px">
+    <button id="btn1" class="btn btn-success" style="width:200px">18-24 </button>
+    <br>
+    <br>
+    <button id="btn2" class="btn btn-success" style="width:200px">25-34</button>
+    <br>
+    <br>
+    <button id="btn3" class="btn btn-success" style="width:200px">35-44</button>
+    <br>
+    <br>
+    <button id="btn4" class="btn btn-success" style="width:200px">45-54</button>
+    <br>
+    <br>
+    <button id="btn5" class="btn btn-success" style="width:200px">55-64</button>
+    <br>
+    <br>
+    <button id="btn6" class="btn btn-success" style="width:200px">65+</button>
+    <br>
+    <br>
+    <button id="btn7" class="btn btn-success" style="width:200px; text-align:center">prefer not to say</button>
+</div>
+@section Scripts {
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                window.location.href = "/home/test?method=18-24";
+            });
+        });
+        $(function () {
+            $('#btn2').click(function () {
+                window.location.href = "/home/test?method=25-34";
+            });
+        });
+        $(function () {
+            $('#btn3').click(function () {
+                window.location.href = "/home/test?method=35-44";
+            });
+        });
+        $(function () {
+            $('#btn4').click(function () {
+                window.location.href = "/home/test?method=45-54";
+            });
+        });
+        $(function () {
+            $('#btn5').click(function () {
+                window.location.href = "/home/test?method=55-64";
+            });
+        });
+        $(function () {
+            $('#btn6').click(function () {
+                window.location.href = "/home/test?method=65+";
+            });
+        });
+        $(function () {
+            $('#btn6').click(function () {
+                window.location.href = "/home/test?method=prefer not to say";
+            });
+        });
+    </script>
+}
+

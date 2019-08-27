@@ -2,30 +2,112 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="banner">
+    <div class="container">
+        <div class="header-text">
+            <p class="big-text">To Community Nurses Everywhere</p>
+            <h2>WithU, With you.</h2>
+            <p class="small-text">Violence against community nurses is not acceptable. WithU is a free website always try to keep our professions  working safely. </p>
+            <div class="button-section">
+                <ul>
+                    <li><a href="/home/Gender" class="top-button white">ASSESS RISKS</a></li>
+                    <li><a href="https://www.google.com/" class="top-button red">EMERGENCY</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div class="color-border">
+</div>
+
+<div class="desc">
+    <div class="container">
+        <h2>WithU Website Is Responsive</h2>
+        <p>aaaaaaaaaaaaaaaa</p>
     </div>
 </div>
+
+<div class="features" id="features">
+    <div class="container">
+        <h3 class="text-head">Features Of WithU</h3>
+        <div class="features-section">
+            <ul>
+                <li>
+                    <div class="feature-icon icon1"></div>
+                    <h4>Risk Assessment</h4>
+                    <p>Assessing your risks, aaaaaaaaaaaaaaaaaaaaaaa.</p>
+                </li>
+                <li>
+                    <div class="feature-icon icon2"></div>
+                    <h4>Emergency Solution</h4>
+                    <p>Fake caller and fake alarm.</p>
+                </li>
+                <li>
+                    <div class="feature-icon icon3"></div>
+                    <h4>Free Self-Defense Education</h4>
+                    <p>Provide some education links.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="desc">
+    <div class="container">
+        <h2>WithU Website Is Responsive</h2>
+        <p>aaaaaaaaaaaaaaaa</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="row" style="padding-top:120px;">
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/picture/story2.png" alt="read">
+            <div class="story-box">
+                <h4>News about Community Nurses Safety</h4>
+                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/picture/story1.jpg" alt="reservation">
+            <div class="story-box">
+                <h4>Make a Claim</h4>
+                <p style="text-align: center">Provide claim links.</p>
+                @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Reservation &raquo;</a></p>*@
+                <p class="btn btn-default">@Html.ActionLink("Reservation", "Index", "real_experts")</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Content/picture/story3.png" alt="find us" />
+            <div class="story-box" style="padding-top:15px;">
+                <h4>Terms and Conditions</h4>
+                <p>aaaaaaaaaaaaaa</p>
+                <p class="btn btn-default">@Html.ActionLink("Open Map", "Index", "Locations")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

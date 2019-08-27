@@ -1,0 +1,33 @@
+﻿@model withusafe2.Models.quizz
+@{
+    ViewBag.Title = "quizz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>quizz</h2>
+@using (Html.BeginForm("Reportt", "Home", FormMethod.Post))
+{
+    <b>Safety Precautions Checklist: </b><br />
+    <span>@Html.CheckBoxFor(m => m.firstt, false) Emergency response plan in place </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.secondd, false) Securoty back-up </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.thirdd, false) Duty administrator,senior clinician, psychiatric consultant nurse, patient advocate consulte consulted/advised </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.forthh, false) Other staff are aware of the risk </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.fifthh, false) Safety first(never engage if you have concerns for safety) </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.sixthh, false) Safety tips reviewed </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.seventhh, false) Personal protection, communication devices and duress alarms reviewed </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.eighthh, false) Environment checked for safety hazards </span>
+    <br>
+    <span>@Html.CheckBoxFor(m => m.nighthh, false) Adequate staffing (assessment of client by at least two staff) </span>
+    <br>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Next" class="btn btn-default" style="padding-top:10px" />
+    </div>
+
+}
