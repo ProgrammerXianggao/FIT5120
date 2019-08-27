@@ -8,7 +8,7 @@ namespace withusafe2.Models
     public partial class LocationModel : DbContext
     {
         public LocationModel()
-            : base("name=LocationModel")
+            : base("name=withusafeee")
         {
         }
 
