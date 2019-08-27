@@ -216,5 +216,10 @@ namespace withusafe2.Controllers
             db.SaveChanges();
             return RedirectToAction("Age");
         }
+        public ActionResult Indexn()
+        {
+            ViewBag.Message = "Your Patient is Located in: ";
+            return View();
+        }
     }
 }
