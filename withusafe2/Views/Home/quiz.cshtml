@@ -3,8 +3,15 @@
     ViewBag.Title = "quiz";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h3>@ViewBag.message</h3>
-<h2>quiz</h2>
+<h3 class="text-head"> Risk Precautions </h3>
+<p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
+<h2>High-risk Screening <font size="5" color="black">(by Occupational Health and Safety Act 2004 (Vic) by  WorkSafe Victoria):</font></h2>
+<p>
+    Brief screening tool to identify clients presenting to triage (emergency) that may be at high risk of violence or self-harm.
+    Tick boxes when potential risk identified.
+</p>
+@*<h3>@ViewBag.message</h3>*@
+
 
 @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
 {
@@ -24,7 +31,7 @@
     <span>@Html.CheckBoxFor(m => m.seventh, false) Confusion </span>
     <br>
     <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Next" class="btn btn-default" style="padding-top:10px" />
+        <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:50px; padding-bottom:15px;" />
     </div>
 
 }

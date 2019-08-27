@@ -90,7 +90,7 @@ namespace withusafe2.Controllers
             if (highRisk.Fifth == 1) { ViewBag.Checkone += checkboxones[4].content + "; "; }
             if (highRisk.Sixth == 1) { ViewBag.Checkone += checkboxones[5].content + "; "; }
             if (highRisk.Seventh == 1) { ViewBag.Checkone += checkboxones[6].content; }
-            ViewBag.Checkone = ViewBag.Checkone.TrimEnd(';');
+            ViewBag.Checkone = ViewBag.Checkone.TrimEnd(' ').TrimEnd(';');
             ViewBag.Checktwo = "";
             if (precaution.First == 0) { ViewBag.Checktwo += checkboxtwos[0].content += "; "; }
             if (precaution.Second == 0) { ViewBag.Checktwo += checkboxtwos[1].content += "; "; }
@@ -101,10 +101,11 @@ namespace withusafe2.Controllers
             if (precaution.Seventh == 0) { ViewBag.Checktwo += checkboxtwos[6].content += "; "; }
             if (precaution.Eighth == 0) { ViewBag.Checktwo += checkboxtwos[7].content += "; "; }
             if (precaution.Nineth == 0) { ViewBag.Checktwo += checkboxtwos[8].content ; }
-            ViewBag.Checktwo = ViewBag.Checktwo.TrimEnd(';');
-
-            if ((double)offenceRate > aveAreaRate) { ViewBag.noticification = "The Risk Index of this suburb is higher than average!"; }
-            else { ViewBag.noticification = "The Risk Index of this suburb is higher than average!"; }
+            ViewBag.Checktwo = ViewBag.Checktwo.TrimEnd(' ').TrimEnd(';');
+            if (ViewBag.Checkone.Length > 3) { ViewBag.Checkone = "The client: " + ViewBag.Checkone; }
+            if (ViewBag.Checktwo.Length > 3) { ViewBag.Checktwo = "Safety Precaution not checked: " + ViewBag.Checktwo; }
+            if ((double)offenceRate > aveAreaRate) { ViewBag.notification = "The Risk Index of this suburb is higher than average!"; }
+            else { ViewBag.notification = "The Risk Index of this suburb is higher than average!"; }
             if ((gender.genderr != "prefer not to say") && (age.Age1 == "prefer not to say"))
             {
                 var genderages = db.GenderAgeSafeties.Where(s => s.Gender == gender.genderr).ToList();
@@ -148,8 +149,9 @@ namespace withusafe2.Controllers
             ViewBag.Message = "Report";
             ViewBag.Test = "Test";
             ViewBag.Gender = gender.genderr;
-            if (ViewBag.Gender == "prefer not to say") { ViewBag.Gender ="Your"; }
+            if (ViewBag.Gender == "prefer not to say") { ViewBag.Gender ="People"; }
             ViewBag.Age = age.Age1;
+            if (ViewBag.Age == "prefer not to say") { ViewBag.Gender = "all"; }
             ViewBag.RiskRate = result;
             ViewBag.Location = locationinfo[0].Suburb;
             ViewBag.AreaRate = (offenceRate * 100).ToString().Substring(0, 3) + '%';
@@ -180,6 +182,11 @@ namespace withusafe2.Controllers
         public ActionResult Age()
         {
             ViewBag.Message = "Please select your age group ";
+            return View();
+        }
+        public ActionResult RiskControl()
+        {
+            //ViewBag.Message = "Please select your age group ";
             return View();
         }
 

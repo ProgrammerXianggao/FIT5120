@@ -3,8 +3,11 @@
     ViewBag.Title = "quizz";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h3 class="text-head"> Risk Precautions </h3>
+<p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
 
-<h2>quizz</h2>
+<h2>Safety Precautions Checklist:</h2>
+<h3>Current safety precautions.□Tick if completed</h3>
 @using (Html.BeginForm("Reportt", "Home", FormMethod.Post))
 {
     <b>Safety Precautions Checklist: </b><br />
@@ -27,7 +30,7 @@
     <span>@Html.CheckBoxFor(m => m.nighthh, false) Adequate staffing (assessment of client by at least two staff) </span>
     <br>
     <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Next" class="btn btn-default" style="padding-top:10px" />
+        <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:50px; padding-bottom:15px;" />
     </div>
 
 }

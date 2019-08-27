@@ -9,6 +9,9 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+a.my-class {
+    color: #fff
+}
 body {
   margin: 0;
 }
