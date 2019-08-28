@@ -537,7 +537,6 @@
     <Content Include="Views\Home\Age.cshtml" />
     <Content Include="Views\Home\quiz.cshtml" />
     <Content Include="Views\Home\quizz.cshtml" />
-    <Content Include="Views\Home\Report.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />
@@ -547,6 +546,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Report.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

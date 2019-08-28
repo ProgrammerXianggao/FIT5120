@@ -174,7 +174,7 @@ namespace withusafe2.Controllers
             if (ViewBag.Age == "prefer not to say") { ViewBag.Gender = "all"; }
             //ViewBag.RiskRate = result;
             ViewBag.Location = locationinfo[0].Suburb;
-            ViewBag.AreaRate = (offenceRate * 100).ToString().Substring(0, 5);
+            ViewBag.AreaRate = (offenceRate * 100).ToString().Substring(0, 5)+"%";
             return View();
         }
         [HttpPost]

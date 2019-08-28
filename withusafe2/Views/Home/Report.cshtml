@@ -12,18 +12,23 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="text-headd">Your Risk Precaution Report:</h3>
-                    <p class="box-desc"><b>Based on your information, this is your risk precaution report.</b></p>
+                    <p class="box-desc">Based on your information, this is your risk precaution report.</p>
                 </div>
                 <div class="panel-body">
-                    <h3>The Risk Index of Violence & Aggression in <font size="6" color="red">@ViewBag.Location</font> area is <font size="6" color="red">@ViewBag.AreaRate</font></h3>
-                    <h3>This Risk Index is higher than <font size="6" color="red">@ViewBag.notification%</font> of other suburbs in Victoria</h3>
+                    <h4>The Violence rate in <font size="6" color="#ff4d4d">@ViewBag.Location</font> area is <font size="6" color="#ff4d4d">@ViewBag.AreaRate</font>.</h4>
+                    <h4>
+                        The above Index of your client's location is higher than <font size="6" color="#ff4d4d">@ViewBag.notification%</font> of other suburbs in Victoria.</br>
+                        
+                    </h4>
                     <hr>
-                    <h3><font size="6" color="red">@ViewBag.Gender</font> between <font size="6" color="red">@ViewBag.Age</font> years old has <font size="6" color="red">@ViewBag.RiskRate</font> Risk Index(Scale from 0-100, 0 being least risky, 100 most risky)</h3>
+                    <h4>"<font size="6" color="#ff4d4d">@ViewBag.Gender</font>" between "<font size="6" color="#ff4d4d">@ViewBag.Age</font>" years old has the Risk Index of <font size="6" color="#ff4d4d">@ViewBag.RiskRate</font>.
+                    <br>
+                    <font size="2">(**Risk index is scaled from 0-100, 0 being the least risky, 100 the most risky.)</font></h4>
                     @*<h3><font size="5" color="black">@ViewBag.notification2</font></h3>*@
                     <hr>
-                    <h3>@ViewBag.Checkone</h3>
+                    <h4>@ViewBag.Checkone</h4>
 
-                    <h3>@ViewBag.Checktwo</h3>
+                    <h4>@ViewBag.Checktwo</h4>
 
                     <div style="align-content:center;text-align:center;">
                         <nav aria-label="Page navigation example">
