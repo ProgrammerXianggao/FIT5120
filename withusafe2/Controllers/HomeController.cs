@@ -146,17 +146,33 @@ namespace withusafe2.Controllers
                     totalno = totalno + item.Total;
                 }
             }
-            var result = decimal.Round((assultno / totalno) * 100, 2);
-            if ((double)result > 4.18) { ViewBag.notification2 = "The Risk index of your characteristic is higher than average(4.18)"; }
-            else if((double)result < 4.18) { ViewBag.notification2 = "The Risk index of your characteristic is lower than average(4.18)"; }
-            else { ViewBag.notification2 = ""; }
+            var result = decimal.Round((assultno / totalno) , 2);
+            if(result > (decimal)0.009) { ViewBag.RiskRate = "7.7"; }
+            if (result > (decimal)0.011) { ViewBag.RiskRate = "15.4"; }
+            if (result > (decimal)0.02) { ViewBag.RiskRate = "23.1"; }
+            if (result > (decimal)0.021) { ViewBag.RiskRate = "30.8"; }
+            if (result > (decimal)0.028) { ViewBag.RiskRate = "38.5"; }
+            if (result > (decimal)0.0351) { ViewBag.RiskRate = "46.2"; }
+            if (result > (decimal)0.0352) { ViewBag.RiskRate = "53.8"; }
+            if (result > (decimal)0.047) { ViewBag.RiskRate = "61.5"; }
+            if (result > (decimal)0.064) { ViewBag.RiskRate = "69.2"; }
+            if (result > (decimal)0.066) { ViewBag.RiskRate = "76.9"; }
+            if (result > (decimal)0.075) { ViewBag.RiskRate = "84.6"; }
+            if (result > (decimal)0.113) { ViewBag.RiskRate = "92.3"; }
+
+
+            //if (result > (decimal)0.009) { ViewBag.notification2 = "The Risk index of your characteristic is 7.7"; }
+            //if (result > (decimal)0.009) { ViewBag.notification2 = "The Risk index of your characteristic is 7.7"; }
+            //if ((double)result > 4.18) { ViewBag.notification2 = "The Risk index of your characteristic is higher than average(4.18)"; }
+            //else if((double)result < 4.18) { ViewBag.notification2 = "The Risk index of your characteristic is lower than average(4.18)"; }
+            //else { ViewBag.notification2 = ""; }
             ViewBag.Message = "Report";
             ViewBag.Test = "Test";
             ViewBag.Gender = gender.genderr;
             if (ViewBag.Gender == "prefer not to say") { ViewBag.Gender ="People"; }
             ViewBag.Age = age.Age1;
             if (ViewBag.Age == "prefer not to say") { ViewBag.Gender = "all"; }
-            ViewBag.RiskRate = result;
+            //ViewBag.RiskRate = result;
             ViewBag.Location = locationinfo[0].Suburb;
             ViewBag.AreaRate = (offenceRate * 100).ToString().Substring(0, 5);
             return View();
@@ -233,6 +249,11 @@ namespace withusafe2.Controllers
         public ActionResult Indexn()
         {
             ViewBag.Message = "Your Patient is Located in: ";
+            return View();
+        }
+        public ActionResult Help()
+        {
+            //ViewBag.Message = "Your Patient is Located in: ";
             return View();
         }
     }

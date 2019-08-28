@@ -4360,7 +4360,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .stories-section ul li:hover {
     box-shadow: 0px 0px 6px 0px #ccc;
 }
-.features {
+.
+s {
     background: url(images/bg.png) repeat;
 }
 .story-box
@@ -4458,45 +4459,39 @@ p.box-desc
 	text-align: center;
 	float: left;
 }
-.feature-icon
-{
-	background:url(picture/feature-icons.png) no-repeat;
-	width: 60px;
-	height: 60px;
-	display: inline-block;
+.feature-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto;
+    display: inline-block;
 }
-.icon1
-{
-	background-position: -1px -1px;
+
+.icon1 {
+    background: url(picture/f1.png) no-repeat;
 }
-.icon2
-{
-	background-position: -68px -1px;
+
+.icon2 {
+    background: url(picture/feature2.png) no-repeat;
 }
-.icon3
-{
-	background-position: -136px -1px;
+
+.icon3 {
+    background: url(picture/feature3.png) no-repeat;
 }
-.features-section ul li h4
-{
-	font-size: 17px;
-	font-weight: 600;
-	color: #fff;
-	font-family: 'Raleway', sans-serif;
-	line-height: 50px;
-	margin-top: 20px;
+
+.features {
+    padding: 20px 2px 50px 2px;
+    background-color: #24436d;
+    float: left;
+    width: 100%;
 }
-.features-section ul li p
-{
-	color: #aab1bf;
-	font-size: 15px;
-	line-height: 20px;
-	width: 90%;
-	margin: 0 auto;
-	font-weight: 400;
-	font-family: 'Open Sans', sans-serif;
-	
+
+.features-section ul li {
+    width: 350px;
+    display: block;
+    text-align: center;
+    float: left;
 }
+
 @media (max-device-width: 480px) and (orientation: landscape) {
   .navbar-fixed-top .navbar-collapse,
   .navbar-fixed-bottom .navbar-collapse {

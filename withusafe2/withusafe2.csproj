@@ -390,7 +390,10 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\picture\color_border.jpg" />
+    <Content Include="Content\picture\f1.png" />
     <Content Include="Content\picture\feature-icons.png" />
+    <Content Include="Content\picture\feature2.png" />
+    <Content Include="Content\picture\feature3.png" />
     <Content Include="Content\picture\icon.png" />
     <Content Include="Content\picture\iconnew.png" />
     <Content Include="Content\picture\picjumbo-bg5.png" />
@@ -509,7 +512,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Indexx.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -543,6 +545,8 @@
     <Content Include="Views\Locations\Index.cshtml" />
     <Content Include="Views\Home\RiskControl.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

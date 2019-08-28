@@ -12,14 +12,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="text-headd">Your Risk Precaution Report:</h3>
-                    <p class="box-desc"><b>Based on your information, this is you risk precaution report.</b></p>
+                    <p class="box-desc"><b>Based on your information, this is your risk precaution report.</b></p>
                 </div>
                 <div class="panel-body">
                     <h3>The Risk Index of Violence & Aggression in <font size="6" color="red">@ViewBag.Location</font> area is <font size="6" color="red">@ViewBag.AreaRate</font></h3>
                     <h3>This Risk Index is higher than <font size="6" color="red">@ViewBag.notification%</font> of other suburbs in Victoria</h3>
                     <hr>
-                    <h3><font size="6" color="red">@ViewBag.Gender</font> between <font size="6" color="red">@ViewBag.Age</font> years old has <font size="6" color="red">@ViewBag.RiskRate</font> Risk Index</h3>
-                    <h3><font size="5" color="black">@ViewBag.notification2</font></h3>
+                    <h3><font size="6" color="red">@ViewBag.Gender</font> between <font size="6" color="red">@ViewBag.Age</font> years old has <font size="6" color="red">@ViewBag.RiskRate</font> Risk Index(Scale from 0-100, 0 being least risky, 100 most risky)</h3>
+                    @*<h3><font size="5" color="black">@ViewBag.notification2</font></h3>*@
                     <hr>
                     <h3>@ViewBag.Checkone</h3>
 

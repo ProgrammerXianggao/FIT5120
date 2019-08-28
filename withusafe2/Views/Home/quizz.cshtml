@@ -18,25 +18,25 @@
                     @using (Html.BeginForm("Reportt", "Home", FormMethod.Post))
                     {
                         <b>Safety Precautions Checklist: </b><br />
-                        <span>@Html.CheckBoxFor(m => m.firstt, false) Emergency response plan in place </span>
+                        <span>@Html.CheckBoxFor(m => m.firstt, false) <font size="4">Emergency response plan in place</font> </span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.secondd, false) Securoty back-up </span>
+                        <span>@Html.CheckBoxFor(m => m.secondd, false) <font size="4">Securoty back-up </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.thirdd, false) Duty administrator,senior clinician, psychiatric consultant nurse, patient advocate consulte consulted/advised </span>
+                        <span>@Html.CheckBoxFor(m => m.thirdd, false) <font size="4">Duty administrator,senior clinician, psychiatric consultant nurse, patient advocate consulte consulted/advised </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.forthh, false) Other staff are aware of the risk </span>
+                        <span>@Html.CheckBoxFor(m => m.forthh, false) <font size="4">Other staff are aware of the risk </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.fifthh, false) Safety first(never engage if you have concerns for safety) </span>
+                        <span>@Html.CheckBoxFor(m => m.fifthh, false)<font size="4"> Safety first(never engage if you have concerns for safety)</font> </span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.sixthh, false) <a href="https://www.cdc.gov/niosh/docs/2012-118/pdfs/2012-118.pdf" target="_blank">Safety tips</a> reviewed </span>
+                        <span>@Html.CheckBoxFor(m => m.sixthh, false)<font size="4"> <a href="https://www.cdc.gov/niosh/docs/2012-118/pdfs/2012-118.pdf" target="_blank">Safety tips</a> reviewed </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.seventhh, false) Personal protection, communication devices and duress alarms reviewed </span>
+                        <span>@Html.CheckBoxFor(m => m.seventhh, false) <font size="4">Personal protection, communication devices and duress alarms reviewed </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.eighthh, false) Environment checked for safety hazards </span>
+                        <span>@Html.CheckBoxFor(m => m.eighthh, false)<font size="4"> Environment checked for safety hazards </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.nighthh, false) Adequate staffing (assessment of client by at least two staff) </span>
+                        <span>@Html.CheckBoxFor(m => m.nighthh, false) <font size="4">Adequate staffing (assessment of client by at least two staff) </font></span>
                         <br>
-                        <div class="col-md-offset-2 col-md-10">
+                        <div style="align-content:center;text-align:center;">
                             <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:50px; padding-bottom:15px;" />
                         </div>
 
@@ -44,7 +44,7 @@
                     <div style="align-content:center;text-align:center;">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
+                                <li>
                                     <a class="page-link" href="/Home/quiz" tabindex="-1">Previous </a>
                                 </li>
                                 <li class="page-item"><a class="page-link" href="/locations/index"> 1 </a></li>
@@ -52,9 +52,9 @@
                                 <li class="page-item"><a class="page-link" href="/Home/Age"> 3 </a></li>
                                 <li class="page-item"><a class="page-link" href="/Home/quiz"> 4 </a></li>
                                 <li class="page-item"><a class="page-link" href="/Home/quizz"> 5 </a></li>
-                                <li class="page-item">
+                                @*<li class="page-item">
                                     <a class="page-link" href="/Home/report">Next</a>
-                                </li>
+                                </li>*@
                             </ul>
                         </nav>
                     </div>

@@ -21,21 +21,21 @@
                     @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
                     {
                         <b>Want Additional Benefit: </b><br />
-                        <span>@Html.CheckBoxFor(m => m.first, false) Presenting with injuries inflicted by self or others </span>
+                        <span>@Html.CheckBoxFor(m => m.first, false)<font size="4"> Presenting with injuries inflicted by self or others </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.second, false) Substabce or alcohol affected </span>
+                        <span>@Html.CheckBoxFor(m => m.second, false)<font size="4"> Substabce or alcohol affected </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.third, false) Behavioural disturbance </span>
+                        <span>@Html.CheckBoxFor(m => m.third, false)<font size="4"> Behavioural disturbance </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.forth, false) Stating intention to harm self or others </span>
+                        <span>@Html.CheckBoxFor(m => m.forth, false) <font size="4">Stating intention to harm self or others </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.fifth, false) Hyper-vigilance </span>
+                        <span>@Html.CheckBoxFor(m => m.fifth, false)<font size="4"> Hyper-vigilance</font> </span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.sixth, false) Suspected of having weapons </span>
+                        <span>@Html.CheckBoxFor(m => m.sixth, false) <font size="4">Suspected of having weapons </font></span>
                         <br>
-                        <span>@Html.CheckBoxFor(m => m.seventh, false) Confusion </span>
+                        <span>@Html.CheckBoxFor(m => m.seventh, false)<font size="4"> Confusion </font></span>
                         <br>
-                        <div class="col-md-offset-2 col-md-10">
+                        <div style="align-content:center;text-align:center;">
                             <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:50px; padding-bottom:15px;" />
                         </div>
 
@@ -51,9 +51,9 @@
                                 <li class="page-item"><a class="page-link" href="/Home/Age"> 3 </a></li>
                                 <li class="page-item"><a class="page-link" href="/Home/quiz"> 4 </a></li>
                                 <li class="page-item"><a class="page-link" href="/Home/quizz"> 5 </a></li>
-                                <li class="page-item">
+                                @*<li class="page-item">
                                     <a class="page-link" href="/Home/quizz">Next</a>
-                                </li>
+                                </li>*@
                             </ul>
                         </nav>
                     </div>
