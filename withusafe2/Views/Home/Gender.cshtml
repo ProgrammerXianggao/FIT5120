@@ -6,38 +6,70 @@
 
 <h3 class="text-head"> Risk Precautions </h3>
 <p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
-<h2>Your Gender is:</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>Your Gender is:</h2>
+                    <h3>@ViewBag.message</h3>
+                </div>
+                <div class="panel-body">
 
-<h3>@ViewBag.message</h3>
-<div style="margin-left:100px">
-    <button id="btn1" class="btn btn-success" style="width:200px">FEMALE</button>
-    <br>
-    <br>
-    <button id="btn2" class="btn btn-success" style="width:200px">MALE</button>
-    <br>
-    <br>
-    <button id="btn3" class="btn btn-success" style="width:200px">prefer not to say</button>
-    <br>
-    <br>
+                    <div style="margin-left:100px">
+                        <button id="btn1" class="btn btn-success" style="width:200px">FEMALE</button>
+                        <br>
+                        <br>
+                        <button id="btn2" class="btn btn-success" style="width:200px">MALE</button>
+                        <br>
+                        <br>
+                        <button id="btn3" class="btn btn-success" style="width:200px">prefer not to say</button>
+                        <br>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div style="align-content:center;text-align:center;">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#"> 1 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 2 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-@section Scripts {
-    <script>
-        $(function () {
-            $('#btn1').click(function () {
-                window.location.href = "/home/gendernext?method=FEMALE";
-            });
-        });
-        $(function () {
-            $('#btn2').click(function () {
-                window.location.href = "/home/gendernext?method=MALE";
-            });
-        });
-        $(function () {
-            $('#btn3').click(function () {
-                window.location.href = "/home/gendernext?method=prefer not to say";
-            });
-        });
+                    @section Scripts {
+                        <script>
+                            $(function () {
+                                $('#btn1').click(function () {
+                                    window.location.href = "/home/gendernext?method=FEMALE";
+                                });
+                            });
+                            $(function () {
+                                $('#btn2').click(function () {
+                                    window.location.href = "/home/gendernext?method=MALE";
+                                });
+                            });
+                            $(function () {
+                                $('#btn3').click(function () {
+                                    window.location.href = "/home/gendernext?method=prefer not to say";
+                                });
+                            });
 
-    </script>
-}
+                        </script>
+                    }
 

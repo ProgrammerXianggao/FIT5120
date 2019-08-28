@@ -6,18 +6,54 @@
 }
 <h3 class="text-head"> Risk Precautions </h3>
 <p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
-<h2 class="">Your Risk Precaution Report:</h2>
-<h3>Based on your information, this is you risk precaution report.</h3>
-<hr>
-<h3>Violence & Aggression rate in <font size="6" color="red">@ViewBag.Location</font> area is <font size="6" color="red">@ViewBag.AreaRate</font></h3>
-<h3><font size="5" color="black">@ViewBag.notification</font></h3>
-<h3><font size="6" color="red">@ViewBag.Gender</font> between <font size="6" color="red">@ViewBag.Age</font> years old has <font size="6" color="red">@ViewBag.RiskRate%</font> Violence rate</h3>
-<h3><font size="5" color="black">@ViewBag.notification2</font></h3>
-<h3>@ViewBag.Checkone</h3>
-<h3>@ViewBag.Checktwo</h3>
-@*<H3>@ViewBag.Message</H3>
-    <br>
-    <H3>@ViewBag.Test</H3>*@
-<button class="top-button white" style="margin-top:10px; height:60px; padding-bottom:30px;">
-    <font size="5" >@Html.ActionLink("Risk Control", "RiskControl", new { @class = "my-class" })</font>
-</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="text-headd">Your Risk Precaution Report:</h3>
+                    <p class="box-desc"><b>Based on your information, this is you risk precaution report.</b></p>
+                </div>
+                <div class="panel-body">
+                    <h3>The Risk Index of Violence & Aggression in <font size="6" color="red">@ViewBag.Location</font> area is <font size="6" color="red">@ViewBag.AreaRate</font></h3>
+                    <h3>This Risk Index is higher than <font size="6" color="red">@ViewBag.notification%</font> of other suburbs in Victoria</h3>
+                    <hr>
+                    <h3><font size="6" color="red">@ViewBag.Gender</font> between <font size="6" color="red">@ViewBag.Age</font> years old has <font size="6" color="red">@ViewBag.RiskRate</font> Risk Index</h3>
+                    <h3><font size="5" color="black">@ViewBag.notification2</font></h3>
+                    <hr>
+                    <h3>@ViewBag.Checkone</h3>
+
+                    <h3>@ViewBag.Checktwo</h3>
+
+                    <div style="align-content:center;text-align:center;">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#"> 1 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 2 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+
+                    @*<div style="align-content:center; text-align:center;">
+                        <button class="top-button white" style="margin-top:10px; height:60px; padding-bottom:30px;">
+                            <font size="5">@Html.ActionLink("Risk Control", "RiskControl", new { @class = "my-class" })</font>
+                        </button>
+                    </div>*@
+                </div>
+            </div>
+            
+            @*<hr>*@
+            
+        </div>
+    </div>
+</div>

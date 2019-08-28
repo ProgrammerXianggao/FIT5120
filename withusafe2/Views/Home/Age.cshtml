@@ -6,69 +6,100 @@
 <h3 class="text-head"> Risk Precautions </h3>
 <p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
 @*<h2>@ViewBag.Title.</h2>*@
-<h2>@ViewBag.Message</h2>
 
-<h3>Your Age Group is:</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>@ViewBag.Message</h2>
+                    <h3>Your Age Group is:</h3>
+                </div>
+                <div class="panel-body">
 
+                    <div style="margin-left:100px">
+                        <button id="btn1" class="btn btn-success" style="width:200px">18-24 </button>
+                        <br>
+                        <br>
+                        <button id="btn2" class="btn btn-success" style="width:200px">25-34</button>
+                        <br>
+                        <br>
+                        <button id="btn3" class="btn btn-success" style="width:200px">35-44</button>
+                        <br>
+                        <br>
+                        <button id="btn4" class="btn btn-success" style="width:200px">45-54</button>
+                        <br>
+                        <br>
+                        <button id="btn5" class="btn btn-success" style="width:200px">55-64</button>
+                        <br>
+                        <br>
+                        <button id="btn6" class="btn btn-success" style="width:200px">65+</button>
+                        <br>
+                        <br>
+                        <button id="btn7" class="btn btn-success" style="width:200px; text-align:center">prefer not to say</button>
+                    </div>
+                    <br>
+                    <br>
+                    <div style="align-content:center;text-align:center;">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#"> 1 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 2 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
 
-<div style="margin-left:100px">
-    <button id="btn1" class="btn btn-success" style="width:200px">18-24 </button>
-    <br>
-    <br>
-    <button id="btn2" class="btn btn-success" style="width:200px">25-34</button>
-    <br>
-    <br>
-    <button id="btn3" class="btn btn-success" style="width:200px">35-44</button>
-    <br>
-    <br>
-    <button id="btn4" class="btn btn-success" style="width:200px">45-54</button>
-    <br>
-    <br>
-    <button id="btn5" class="btn btn-success" style="width:200px">55-64</button>
-    <br>
-    <br>
-    <button id="btn6" class="btn btn-success" style="width:200px">65+</button>
-    <br>
-    <br>
-    <button id="btn7" class="btn btn-success" style="width:200px; text-align:center">prefer not to say</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-@section Scripts {
-    <script>
-        $(function () {
-            $('#btn1').click(function () {
-                window.location.href = "/home/test?method=18-24";
-            });
-        });
-        $(function () {
-            $('#btn2').click(function () {
-                window.location.href = "/home/test?method=25-34";
-            });
-        });
-        $(function () {
-            $('#btn3').click(function () {
-                window.location.href = "/home/test?method=35-44";
-            });
-        });
-        $(function () {
-            $('#btn4').click(function () {
-                window.location.href = "/home/test?method=45-54";
-            });
-        });
-        $(function () {
-            $('#btn5').click(function () {
-                window.location.href = "/home/test?method=55-64";
-            });
-        });
-        $(function () {
-            $('#btn6').click(function () {
-                window.location.href = "/home/test?method=65+";
-            });
-        });
-        $(function () {
-            $('#btn7').click(function () {
-                window.location.href = "/home/test?method=prefer not to say";
-            });
-        });
-    </script>
-}
+                    @section Scripts {
+                        <script>
+                            $(function () {
+                                $('#btn1').click(function () {
+                                    window.location.href = "/home/test?method=18-24";
+                                });
+                            });
+                            $(function () {
+                                $('#btn2').click(function () {
+                                    window.location.href = "/home/test?method=25-34";
+                                });
+                            });
+                            $(function () {
+                                $('#btn3').click(function () {
+                                    window.location.href = "/home/test?method=35-44";
+                                });
+                            });
+                            $(function () {
+                                $('#btn4').click(function () {
+                                    window.location.href = "/home/test?method=45-54";
+                                });
+                            });
+                            $(function () {
+                                $('#btn5').click(function () {
+                                    window.location.href = "/home/test?method=55-64";
+                                });
+                            });
+                            $(function () {
+                                $('#btn6').click(function () {
+                                    window.location.href = "/home/test?method=65+";
+                                });
+                            });
+                            $(function () {
+                                $('#btn7').click(function () {
+                                    window.location.href = "/home/test?method=prefer not to say";
+                                });
+                            });
+                        </script>
+                    }
 

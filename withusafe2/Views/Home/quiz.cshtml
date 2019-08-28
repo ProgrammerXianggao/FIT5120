@@ -5,33 +5,60 @@
 }
 <h3 class="text-head"> Risk Precautions </h3>
 <p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
-<h2>High-risk Screening <font size="5" color="black">(by Occupational Health and Safety Act 2004 (Vic) by  WorkSafe Victoria):</font></h2>
-<p>
-    Brief screening tool to identify clients presenting to triage (emergency) that may be at high risk of violence or self-harm.
-    Tick boxes when potential risk identified.
-</p>
-@*<h3>@ViewBag.message</h3>*@
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>High-risk Screening <font size="5" color="black">(by Occupational Health and Safety Act 2004 (Vic) by  WorkSafe Victoria):</font></h2>
+                    <p>
+                        Brief screening tool to identify clients presenting to triage (emergency) that may be at high risk of violence or self-harm.
+                        Tick boxes when potential risk identified.
+                    </p>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
+                    {
+                        <b>Want Additional Benefit: </b><br />
+                        <span>@Html.CheckBoxFor(m => m.first, false) Presenting with injuries inflicted by self or others </span>
+                        <br>
+                        <span>@Html.CheckBoxFor(m => m.second, false) Substabce or alcohol affected </span>
+                        <br>
+                        <span>@Html.CheckBoxFor(m => m.third, false) Behavioural disturbance </span>
+                        <br>
+                        <span>@Html.CheckBoxFor(m => m.forth, false) Stating intention to harm self or others </span>
+                        <br>
+                        <span>@Html.CheckBoxFor(m => m.fifth, false) Hyper-vigilance </span>
+                        <br>
+                        <span>@Html.CheckBoxFor(m => m.sixth, false) Suspected of having weapons </span>
+                        <br>
+                        <span>@Html.CheckBoxFor(m => m.seventh, false) Confusion </span>
+                        <br>
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:50px; padding-bottom:15px;" />
+                        </div>
 
-@using (Html.BeginForm("Survey", "Home", FormMethod.Post))
-{
-    <b>Want Additional Benefit: </b><br />
-    <span>@Html.CheckBoxFor(m => m.first, false) Presenting with injuries inflicted by self or others </span>
-    <br>
-    <span>@Html.CheckBoxFor(m => m.second, false) Substabce or alcohol affected </span>
-    <br>
-    <span>@Html.CheckBoxFor(m => m.third, false) Behavioural disturbance </span>
-    <br>
-    <span>@Html.CheckBoxFor(m => m.forth, false) Stating intention to harm self or others </span>
-    <br>
-    <span>@Html.CheckBoxFor(m => m.fifth, false) Hyper-vigilance </span>
-    <br>
-    <span>@Html.CheckBoxFor(m => m.sixth, false) Suspected of having weapons </span>
-    <br>
-    <span>@Html.CheckBoxFor(m => m.seventh, false) Confusion </span>
-    <br>
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:50px; padding-bottom:15px;" />
-    </div>
-
-}
+                    }
+                    <div style="align-content:center;text-align:center;">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#"> 1 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 2 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+</div>
+</div>
+</div>
+</div>

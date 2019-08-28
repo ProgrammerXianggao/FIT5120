@@ -1577,7 +1577,7 @@ pre {
     padding-left: 15px;
     margin-right: 0;
     margin-left: 0;
-    width: 1080;
+    width: auto;
 }
 pre code {
   padding: 0;
@@ -4429,6 +4429,15 @@ h3.text-head
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
 }
+h3.text-headd {
+    color: #000;
+    font-size: 27px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+
 p.box-desc
 {
 	color: #888;
