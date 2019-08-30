@@ -20,9 +20,9 @@
             @*<th>
                     @Html.DisplayNameFor(model => model.OffenceCount)
                 </th>*@
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Population)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Postcode)
             </th>
@@ -42,9 +42,9 @@
                 @*<td>
                         @Html.DisplayFor(modelItem => item.OffenceCount)
                     </td>*@
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Population).ToString().Substring(0, 4).TrimEnd('.')
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Postcode).ToString().Substring(0, 4)
                 </td>
@@ -53,8 +53,8 @@
                     </td>*@
                 <td>
                     @*<button id="btn" class="btn btn-success" style="width:200px">Select</button>*@
-                    <p class="btn btn-default">
-                        @Html.ActionLink("Select", "../Home/Gender", new { id = item.Id })
+                    <p >
+                        @Html.ActionLink("Select", "../Home/LocationNext", new { id = item.Id  })
                     </p>
                     @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |
                         @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@

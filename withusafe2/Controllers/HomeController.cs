@@ -77,11 +77,13 @@ namespace withusafe2.Controllers
             Precaution precaution = db.Precautions.ToList().Last();
             HighRisk highRisk = db.HighRisks.ToList().Last();
             PatienLocationId patienLocationId = db2.PatienLocationIds.ToList().Last();
+            var test = patienLocationId.PLI;
             decimal assultno = 0;
             decimal totalno = 0;
             var locationinfo = db3.Locations.Where(l => l.Id == patienLocationId.PLI).ToList();
             var offenceRate = locationinfo[0].OffenceRate;
             var offenceID = locationinfo[0].Id;
+            ViewBag.Location = locationinfo[0].Suburb;
             var totallocation = db3.Locations.ToList().Last().Id;
             var locationRank = decimal.Round(((1-((decimal)offenceID / (decimal)totallocation))*100),2);
             //var aveAreaRate = 0.006839;
@@ -170,10 +172,12 @@ namespace withusafe2.Controllers
             ViewBag.Test = "Test";
             ViewBag.Gender = gender.genderr;
             if (ViewBag.Gender == "prefer not to say") { ViewBag.Gender ="People"; }
-            ViewBag.Age = age.Age1;
+            if (age.Age1 == "65") { ViewBag.Age = age.Age1 + "+"; }
+            else { ViewBag.Age = age.Age1; }
+            
             if (ViewBag.Age == "prefer not to say") { ViewBag.Gender = "all"; }
             //ViewBag.RiskRate = result;
-            ViewBag.Location = locationinfo[0].Suburb;
+            
             ViewBag.AreaRate = (offenceRate * 100).ToString().Substring(0, 5)+"%";
             return View();
         }
