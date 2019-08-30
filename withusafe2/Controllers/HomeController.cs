@@ -78,6 +78,7 @@ namespace withusafe2.Controllers
             HighRisk highRisk = db.HighRisks.ToList().Last();
             PatienLocationId patienLocationId = db2.PatienLocationIds.ToList().Last();
             var test = patienLocationId.PLI;
+             
             decimal assultno = 0;
             decimal totalno = 0;
             var locationinfo = db3.Locations.Where(l => l.Id == patienLocationId.PLI).ToList();
