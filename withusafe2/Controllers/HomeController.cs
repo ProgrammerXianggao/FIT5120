@@ -16,6 +16,10 @@ namespace withusafe2.Controllers
         {
             return View();
         }
+        public ActionResult error()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {

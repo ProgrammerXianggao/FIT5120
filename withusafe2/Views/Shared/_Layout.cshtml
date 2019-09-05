@@ -2,13 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/ico" href="~/Content/picture/fav_icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>WithU</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
+
     <div class="navbar navbar-default navbar-fixed-top">
         <table>
             <tr>
@@ -29,7 +31,8 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li><a style="margin-bottom:0px;" class="homefont" href="/Home/index">Home</a></li>
+                                @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                                 <li>@Html.ActionLink("Risk Precaution", "Index", "Locations")</li>
                                 <li>@Html.ActionLink("Help", "Contact", "Home")</li>
                                 <!--
@@ -43,9 +46,10 @@
             </tr>
         </table>
     </div>
-    <div class="container body-content">
+    <div @*class="container body-content"*@>
         @RenderBody()
         <hr />
+        <div class="container body-content">
         <footer>
             <p>&copy; @DateTime.Now.Year - withU</p>
         </footer>

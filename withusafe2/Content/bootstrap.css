@@ -3177,7 +3177,7 @@ fieldset[disabled] .btn-default.focus {
 .small-text {
     width: 65%;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     line-height: 40px;
@@ -4302,10 +4302,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-height: 340px;
 }
 .stories {
-    padding: 80px 0px;
+    padding: 0px 0px;
     float: left;
     width: 100%;
     background: #f1f1f1;
+    margin-left:0px; 
 }
 
 .stories-section ul li {
@@ -4390,6 +4391,7 @@ s {
 	    font-weight: 400;
 	    line-height: 20px;
     }
+
 .desc {
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -4411,6 +4413,23 @@ s {
         font-family: 'Open Sans', sans-serif;
         color: #aab1bf;
     }
+.welcomefont {
+
+    font-size: 40px;
+    font-style: italic;
+    line-height: 40px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.homefont {
+    color: #58d526;
+    font-weight: 800;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 20px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
 .features
 {
 	padding: 80px 0px;
@@ -4484,13 +4503,16 @@ p.box-desc
     float: left;
     width: 100%;
 }
-
-.features-section ul li {
-    width: 350px;
-    display: block;
+.features-section {
     text-align: center;
-    float: left;
 }
+    .features-section ul li {
+        display: list-item;
+        width: 350px;
+        /*display: inline-block;*/
+        text-align: center;
+        /*float: left;*/
+    }
 
 @media (max-device-width: 480px) and (orientation: landscape) {
   .navbar-fixed-top .navbar-collapse,

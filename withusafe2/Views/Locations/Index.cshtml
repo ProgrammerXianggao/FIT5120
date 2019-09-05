@@ -4,13 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="container">
 <h3 class="text-head"> Risk Precautions </h3>
 <p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
 <h2>Please Select Your Patient Location </h2>
 @*<h3>Please Select a Suburb</h3>*@
-<p>
-    @*@Html.ActionLink("Create New", "Create")*@
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -64,24 +63,7 @@
     </tbody>
 
 </table>
-
-@*<div style="align-content:center;text-align:center;">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="/locations/index"> 1 </a></li>
-            <li class="page-item"><a class="page-link" href="/Home/Gender"> 2 </a></li>
-            <li class="page-item"><a class="page-link" href="/Home/Age"> 3 </a></li>
-            <li class="page-item"><a class="page-link" href="/Home/quiz"> 4 </a></li>
-            <li class="page-item"><a class="page-link" href="/Home/quizz"> 5 </a></li>
-            <li class="page-item">
-                <a class="page-link" href="/Home/Gender">Next</a>
-            </li>
-        </ul>
-    </nav>
-</div>*@
+</div>
 @section Scripts {
     @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
     @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
