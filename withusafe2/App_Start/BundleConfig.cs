@@ -20,10 +20,13 @@ namespace withusafe2
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                "~/Scripts/select2.min.js",
+                "~/Scripts/liquidFillGauge.js",
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/select2.min.css",
                       "~/Content/site.css"));
         }
     }

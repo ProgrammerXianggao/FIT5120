@@ -1,0 +1,68 @@
+﻿@model IEnumerable<withusafe2.Models.location_new>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Index</h2>*@
+<div class="container">
+    <h3 class="text-head"> Risk Precautions </h3>
+    <p class="box-desc">WithU provides nurses with simple and quick risk assess and precautions, to support you get prepared for each visit.</p>
+    <h2>Please Select Your Patient Location </h2>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Suburb)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Latitude)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Longitude)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Suburb)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Latitude)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Longitude)
+                    </td>
+                    <td>
+                        <p>
+                            @Html.ActionLink("Select", "../Home/LocationNext", new { id = item.Id })
+                        </p>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+@section Scripts {
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+
+
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+      rel="stylesheet" />

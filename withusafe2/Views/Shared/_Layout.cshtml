@@ -7,7 +7,27 @@
     <title>WithU</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @* This is for the mapbox map. *@
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    @*This is used for the Geocoding Mapbox API*@
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'>
+    </script>
+    <link rel='stylesheet'
+          href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css'
+          type='text/css' />
+    @*This is used for the D3 Liquid Fill Gauge API*@
+    <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="~/Scripts/liquidFillGauge.js" language="JavaScript"></script>
 
+    @*This is used for the Select2 API*@
+
+    <style>
+        .liquidFillGaugeText {
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -53,6 +73,7 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - withU</p>
         </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

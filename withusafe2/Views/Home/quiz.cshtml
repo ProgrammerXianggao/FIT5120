@@ -11,7 +11,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2>High-risk Screening<font size="2">(by Occupational Health and Safety Act 2004 (Vic) by WorkSafe Victoria)</font>:</h2>
+                    <h2>High-risk Screening:<br />
+                    <font size="2">(by Occupational Health and Safety Act 2004 (Vic) by WorkSafe Victoria)</font></h2>
                         <p>
                             Brief screening tool to identify clients presenting to triage (emergency) that may be at high risk of violence or self-harm.
                             Tick boxes when potential risk identified.
@@ -20,7 +21,7 @@
                 <div class="panel-body">
                     @using (Html.BeginForm("Survey", "Home", FormMethod.Post))
                     {
-                        <b>Want Additional Benefit: </b><br />
+                        <b>Tick if the patient has the following behaviour: </b><br />
                         <span>@Html.CheckBoxFor(m => m.first, false)<font size="4"> Presenting with injuries inflicted by self or others </font></span>
                         <br>
                         <span>@Html.CheckBoxFor(m => m.second, false)<font size="4"> Substabce or alcohol affected </font></span>
@@ -36,27 +37,38 @@
                         <span>@Html.CheckBoxFor(m => m.seventh, false)<font size="4"> Confusion </font></span>
                         <br>
                         <div style="align-content:center;text-align:center;">
-                            <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:50px; padding-bottom:15px;" />
+                            <input type="submit" value="Next" class="top-button quiz" style="margin-top:10px; height:30px;padding-top:2px; padding-bottom:2px;" />
                         </div>
 
                     }
+
+                    <div class="pub-wrap">
+                        <ul class="pub-process process-5 pub-process-flex" id="pubProcess">
+                            <li class="active"><span class="ball"><font size="2"><a class="page-link" href="/locations/index">1</a></font></span></li>
+                            <li class="active"><span class="ball"><font size="2"><a class="page-link" href="/Home/Gender">2</a></font></span></li>
+                            <li class="active"><span class="ball"><font size="2"><a class="page-link" href="/Home/Age">3</a></font></span></li>
+                            <li class="active"><span class="ball"><font size="2"><a class="page-link" href="/Home/quiz"> 4</a></font></span></li>
+                            <li><span class="ball">5</span></li>
+                        </ul>
+                    </div>
+
                     @*<div style="align-content:center;text-align:center;">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="/Home/Age" tabindex="-1">Previous </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="/locations/index"> 1 </a></li>
-                                <li class="page-item"><a class="page-link" href="/Home/Gender"> 2 </a></li>
-                                <li class="page-item"><a class="page-link" href="/Home/Age"> 3 </a></li>
-                                <li class="page-item"><a class="page-link" href="/Home/quiz"> 4 </a></li>
-                                <li class="page-item"><a class="page-link" href="/Home/quizz"> 5 </a></li>
-                                @*<li class="page-item">
-                                    <a class="page-link" href="/Home/quizz">Next</a>
-                                </li>*@
-                            @*</ul>
-                        </nav>
-                    </div>*@
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="/Home/Age" tabindex="-1">Previous </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/locations/index"> 1 </a></li>
+                <li class="page-item"><a class="page-link" href="/Home/Gender"> 2 </a></li>
+                <li class="page-item"><a class="page-link" href="/Home/Age"> 3 </a></li>
+                <li class="page-item"><a class="page-link" href="/Home/quiz"> 4 </a></li>
+                <li class="page-item"><a class="page-link" href="/Home/quizz"> 5 </a></li>
+                @*<li class="page-item">
+                    <a class="page-link" href="/Home/quizz">Next</a>
+                </li>*@
+                    @*</ul>
+            </nav>
+        </div>*@
                 </div>
 </div>
 </div>

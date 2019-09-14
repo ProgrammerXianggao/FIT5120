@@ -1,0 +1,62 @@
+﻿@model IEnumerable<withusafe2.Models.symptom>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+
+<div class="container">
+    <h2>Index_new</h2>
+    @using (Html.BeginForm("SearchNext", "symptoms", FormMethod.Post))
+    {
+        <div class="col-sm-10">
+            <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width:75%">
+                @foreach (var item in Model)
+                {
+                    <option value="@Html.DisplayFor(modelItem => item.symptom_name)">@Html.DisplayFor(modelItem => item.symptom_name)</option>
+                }
+                @*<option value="AL">Alabama</option>*@
+            </select>
+            <input type="submit" value="Search" class="top-button green" style="margin-top:10px; height:30px;padding-top:2px; padding-bottom:2px;" />
+        </div>
+        <br>
+        @*<div class="col-sm-2">
+                <input type="submit" value="Next" class="top-button green" style="margin-top:10px; height:30px;padding-top:2px; padding-bottom:2px;" />
+            </div>*@
+    }
+
+</div>
+@section Scripts {
+
+    <script language="javascript">
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2({
+                placeholder: "Select symptoms"
+            });
+        });
+        var jsonArrayStr = '[]';
+        var jsonArray = eval('(' + jsonArrayStr + ')');
+
+
+
+        var obj = document.getElementById('company_kh');
+
+        //获取所有的option
+
+        var options = obj.options;
+
+
+
+        for (var i = 0; i < options.length; i++) {
+
+            //判断optin是否被选中了
+
+            var ss = options[i].selected;
+            if (options[i].selected) {
+                var jsonstr = '{"value":"' + options[i].value + '","text":"' + options[i].text + '"}';
+                jsonArray.push(jsonstr);
+            }
+        }
+    </script>
+}

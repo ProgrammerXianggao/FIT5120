@@ -36,5 +36,7 @@ namespace withusafe2.Models
                 .Property(e => e.OffenceRate)
                 .HasPrecision(17, 16);
         }
+
+        public System.Data.Entity.DbSet<withusafe2.Models.location_new> location_new { get; set; }
     }
 }

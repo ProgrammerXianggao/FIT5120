@@ -11,7 +11,8 @@ namespace withusafe2.Controllers
     {
         private withusafeModel db = new withusafeModel();
         private PatientLocationIdModel db2 = new PatientLocationIdModel();
-        private LocationModel db3 = new LocationModel();
+        //private LocationModel db3 = new LocationModel();
+        private Location_newModel db4 = new Location_newModel();
         public ActionResult Index()
         {
             return View();
@@ -85,13 +86,13 @@ namespace withusafe2.Controllers
              
             decimal assultno = 0;
             decimal totalno = 0;
-            var locationinfo = db3.Locations.Where(l => l.Id == patienLocationId.PLI).ToList();
-            var offenceRate = locationinfo[0].OffenceRate;
+            //var locationinfo = db3.Locations.Where(l => l.Id == patienLocationId.PLI).ToList();
+            var locationinfo = db4.location_new.Where(l => l.Id == patienLocationId.PLI).ToList();
+            var offenceRate = locationinfo[0].Offence_rate;
             var offenceID = locationinfo[0].Id;
             ViewBag.Location = locationinfo[0].Suburb;
-            var totallocation = db3.Locations.ToList().Last().Id;
-            var locationRank = decimal.Round(((1-((decimal)offenceID / (decimal)totallocation))*100),2);
-            //var aveAreaRate = 0.006839;
+            var locationRank = locationinfo[0].Risklevel;
+
             ViewBag.Checkone = "";
             if (highRisk.First == 1) { ViewBag.Checkone += checkboxones[0].content + "; "; }
             if (highRisk.Second == 1) { ViewBag.Checkone += checkboxones[1].content + "; "; }
@@ -115,8 +116,6 @@ namespace withusafe2.Controllers
             if (ViewBag.Checkone.Length > 3) { ViewBag.Checkone = "The client: " + ViewBag.Checkone; }
             if (ViewBag.Checktwo.Length > 3) { ViewBag.Checktwo = "Safety Precaution not checked: " + ViewBag.Checktwo; }
             ViewBag.notification = locationRank;
-            //if ((double)offenceRate > aveAreaRate) { ViewBag.notification = "The Risk Index of this suburb is higher than average!(0.68)"; }
-            //else { ViewBag.notification = "The Risk Index of this suburb is lower than average!(0.68)"; }
             if ((gender.genderr != "prefer not to say") && (age.Age1 == "prefer not to say"))
             {
                 var genderages = db.GenderAgeSafeties.Where(s => s.Gender == gender.genderr).ToList();
@@ -153,8 +152,8 @@ namespace withusafe2.Controllers
                     totalno = totalno + item.Total;
                 }
             }
-            var result = decimal.Round((assultno / totalno) , 2);
-            if(result > (decimal)0.009) { ViewBag.RiskRate = "7.7"; }
+            var result = decimal.Round((assultno / totalno), 2);
+            if (result > (decimal)0.009) { ViewBag.RiskRate = "7.7"; }
             if (result > (decimal)0.011) { ViewBag.RiskRate = "15.4"; }
             if (result > (decimal)0.02) { ViewBag.RiskRate = "23.1"; }
             if (result > (decimal)0.021) { ViewBag.RiskRate = "30.8"; }
@@ -184,7 +183,8 @@ namespace withusafe2.Controllers
             //ViewBag.RiskRate = result;
             
             ViewBag.AreaRate = (offenceRate * 100).ToString().Substring(0, 5)+"%";
-            return View();
+            ViewBag.location_id = patienLocationId.PLI;
+            return View(db4.location_new.ToList());
         }
         [HttpPost]
         public ActionResult Reportt(quizz q)
