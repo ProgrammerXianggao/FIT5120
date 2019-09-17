@@ -197,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Disease_infectionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\location_newController.cs" />
@@ -236,6 +237,7 @@
     <Content Include="App_Data\withusafe_log.ldf">
       <DependentUpon>withusafe.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\all.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -397,6 +399,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\picture\fav_icon.png" />
     <Content Include="Content\picture\color_border.jpg" />
     <Content Include="Content\picture\f1.png" />
@@ -405,15 +408,19 @@
     <Content Include="Content\picture\feature3.png" />
     <Content Include="Content\picture\icon.png" />
     <Content Include="Content\picture\iconnew.png" />
+    <Content Include="Content\picture\infec-bg.png" />
+    <Content Include="Content\picture\infec-bg1.png" />
     <Content Include="Content\picture\picjumbo-bg5.png" />
     <Content Include="Content\picture\story1.jpg" />
     <Content Include="Content\picture\story2.png" />
     <Content Include="Content\picture\story3.png" />
+    <Content Include="Content\responsive.css" />
     <Content Include="Content\select2.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\all.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -570,6 +577,11 @@
     <Content Include="Views\symptoms\Edit.cshtml" />
     <Content Include="Views\symptoms\Index.cshtml" />
     <Content Include="Views\symptoms\Search.cshtml" />
+    <Content Include="Views\Disease_infection\Create.cshtml" />
+    <Content Include="Views\Disease_infection\Delete.cshtml" />
+    <Content Include="Views\Disease_infection\Details.cshtml" />
+    <Content Include="Views\Disease_infection\Edit.cshtml" />
+    <Content Include="Views\Disease_infection\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

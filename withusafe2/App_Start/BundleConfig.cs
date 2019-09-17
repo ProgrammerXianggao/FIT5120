@@ -22,10 +22,16 @@ namespace withusafe2
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/select2.min.js",
                 "~/Scripts/liquidFillGauge.js",
+                "~/Scripts/all.js",
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      //"~/Content/solid.css",
+                      //"~/Content/brands.css",
+                      "~/Content/all.css",
+                      //"~/Content/fontawesome.css",
+                      "~/Content/responsive.css",
                       "~/Content/select2.min.css",
                       "~/Content/site.css"));
         }

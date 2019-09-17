@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -13,6 +14,7 @@ namespace withusafe2.Controllers
     public class symptomsController : Controller
     {
         private TruesymptomModel db = new TruesymptomModel();
+        private InfectionModel db2 = new InfectionModel();
 
         // GET: symptoms
         public ActionResult Index()
@@ -25,13 +27,41 @@ namespace withusafe2.Controllers
 
             return View(db.symptoms.ToList());
         }
-
+        //[HttpPost]
         public ActionResult SearchNext()
         {
             var names = Request.Form["states[]"].Split(',');
-            return RedirectToAction("index");
+            var new_list = new List<Disease_infection>();
+            var test = db2.Disease_infection.ToList();
+            foreach (var infection in db2.Disease_infection)
+                {
+                    var flag = 0;
+                    foreach (var item in names)
+                    {
+                        if (!infection.Symptoms.Contains(item)) { flag = 1; }
+                    }
+                    if (flag == 0)
+                    {
+                        new_list.Add(infection);
+                    }
+                    
+                }
+            
+            var i = new_list;
+            //var aa = "aaa";
+            return RedirectToAction("Test","symptoms",new { new_listt = i });
         }
 
+        public ActionResult Test(List<Disease_infection> new_listt)
+        {
+            var listt = new_listt;
+            return View(listt);
+        }
+        //public ActionResult Test(List<Disease_infection> list)
+        //{
+        //    var listt = list;
+        //    return View(list);
+        //}
         // GET: symptoms/Details/5
         public ActionResult Details(int? id)
         {

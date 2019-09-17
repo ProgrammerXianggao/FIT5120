@@ -4121,14 +4121,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   margin-bottom: -1px;
 }
-.nav-tabs > li > a {
-  margin-right: 2px;
-  line-height: 1.42857143;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-}
+    .nav-tabs > li > a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 0 none;
+        /*border: 1px solid transparent;
+        border-radius: 4px 4px 0 0;*/
+    }
 .nav-tabs > li > a:hover {
-  border-color: #eee #eee #ddd;
+  border:0 none;
+  /*border-color: #eee #eee #ddd;*/
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
@@ -4334,7 +4336,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
-    -ms-transition: all 0.3s ease-in;
+    /*-ms-transition: all 0.3s ease-in;*/
     -webkit-transition: all 0.3s ease-in;
 }
 
@@ -4377,8 +4379,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .stories-section ul li:hover {
     box-shadow: 0px 0px 6px 0px #ccc;
 }
-.
-s {
+.s {
     background: url(images/bg.png) repeat;
 }
 .story-box
