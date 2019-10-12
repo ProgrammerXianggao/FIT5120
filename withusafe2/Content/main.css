@@ -52,7 +52,9 @@ a {
     transition: color 300ms, background-color 300ms;
 }
 
-a:hover,
+    a:hover {
+    color:black
+    }
 a:focus {
     color: #EC5538;
 }

@@ -20,32 +20,37 @@ namespace withusafe2.Controllers
         //    return View(db.Disease_infection.ToList());
         //}
 
-        //public ActionResult Index()
-        //{
-        //    var names = Request.Form["states[]"].Split(',');
-        //    var new_list = new List<Disease_infection>();
-        //    //var test = db.Disease_infection.ToList();
-        //    foreach (var infection in db.Disease_infection)
-        //    {
-        //        var flag = 0;
-        //        foreach (var item in names)
-        //        {
-        //            if (!infection.Symptoms.Contains(item)) { flag = 1; }
-        //        }
-        //        if (flag == 0)
-        //        {
-        //            new_list.Add(infection);
-        //        }
-        //    }
-        //    ViewBag.input = Request.Form["states[]"].Split(',').Count();
-        //    return View(new_list);
-        //}
-
         public ActionResult Index()
         {
-            ViewBag.input = 2;
-            return View(db.Disease_infection.ToList());
+            ViewBag.active4 = "active";
+            ViewBag.font4 = "font-weight:900;font-style: italic;";
+            var test = Request.Form["states[]"];
+            if (test == null) { return RedirectToAction("Search_error", "symptoms"); }
+            var names = Request.Form["states[]"].Split(',');
+            var new_list = new List<Disease_infection>();
+            //var test = db.Disease_infection.ToList();
+            foreach (var infection in db.Disease_infection)
+            {
+                var flag = 0;
+                foreach (var item in names)
+                {
+                    if (!infection.Symptoms.Contains(item)) { flag = 1; }
+                }
+                if (flag == 0)
+                {
+                    new_list.Add(infection);
+                }
+            }
+            if (new_list.Count() == 0) { return RedirectToAction("Search_warning","symptoms"); }
+            ViewBag.input = Request.Form["states[]"].Split(',').Count();
+            return View(new_list);
         }
+
+        //public ActionResult Index_warining()
+        //{
+            
+        //    return View(db.Disease_infection.ToList());
+        //}
 
 
         // GET: Disease_infection/Details/5

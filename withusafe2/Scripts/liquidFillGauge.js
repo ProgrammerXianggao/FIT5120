@@ -26,7 +26,7 @@ function liquidFillGaugeDefaultSettings() {
         valueCountUp: true, // If true, the displayed value counts up from 0 to it's final value upon loading. If false, the final value is displayed.
         displayPercent: true, // If true, a % symbol is displayed after the value.
         textColor: "#FF4444", // The color of the value text when the wave does not overlap it.
-        waveTextColor: "#A4DBf8", // The color of the value text when the wave overlaps it.
+        waveTextColor: "#FF4444", // The color of the value text when the wave overlaps it.
 
 
 
@@ -74,6 +74,7 @@ function loadLiquidFillGauge(elementId, value, config) {
     var textPixels = (config.textSize * radius / 2);
     var textFinalValue = parseFloat(value).toFixed(2);
     var textStartValue = config.valueCountUp ? config.minValue : textFinalValue;
+    
     var percentText = config.displayPercent ? "%" : "";
     var circleThickness = config.circleThickness * radius;
     var circleFillGap = config.circleFillGap * radius;
@@ -183,7 +184,13 @@ function loadLiquidFillGauge(elementId, value, config) {
     if (config.valueCountUp) {
         var textTween = function () {
             var i = d3.interpolate(this.textContent, textFinalValue);
-            return function (t) { this.textContent = textRounder(i(t)) + percentText; }
+
+            //if (parseFloat(textRounder(i(t))) > parseFloat(66)) { return function (t) { this.textContent = "High" };}
+            //else if (parseFloat(textRounder(i(t))) > 33.00) { return function (t) { this.textContent = "Medium" } }
+            //else { return function (t) { this.textContent = "Low" } }
+            //var c = textRounder(i(t));
+            //if (parseFloat(textRounder(i(t)) > 0)) { return function (t) { this.textContent = c};}
+            return function (t) { this.textContent = ""}
         };
         text1.transition()
             .duration(config.waveRiseTime)

@@ -35,6 +35,22 @@ namespace withusafe2.Models
             modelBuilder.Entity<location_new>()
                 .Property(e => e.Longitude)
                 .HasPrecision(11, 8);
+
+            modelBuilder.Entity<location_new>()
+                .Property(e => e.Postcode)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<location_new>()
+                .Property(e => e.Offence_count)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<location_new>()
+                .Property(e => e.safe_count)
+                .HasPrecision(4, 0);
+
+            modelBuilder.Entity<location_new>()
+                .Property(e => e.unsafe_count)
+                .HasPrecision(4, 0);
         }
     }
 }

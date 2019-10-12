@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Disease_infectionController.cs" />
+    <Compile Include="Controllers\experiencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\location_newController.cs" />
@@ -211,6 +212,8 @@
     <Compile Include="Models\Checkboxone.cs" />
     <Compile Include="Models\Checkboxtwo.cs" />
     <Compile Include="Models\Disease_infection.cs" />
+    <Compile Include="Models\experience.cs" />
+    <Compile Include="Models\ExperienceModel.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\GenderAgeSafety.cs" />
     <Compile Include="Models\HighRisk.cs" />
@@ -226,6 +229,8 @@
     <Compile Include="Models\Precaution.cs" />
     <Compile Include="Models\quiz2.cs" />
     <Compile Include="Models\quizz.cs" />
+    <Compile Include="Models\Share.cs" />
+    <Compile Include="Models\ShareModel.cs" />
     <Compile Include="Models\symptom.cs" />
     <Compile Include="Models\TruesymptomModel.cs" />
     <Compile Include="Models\withusafeModel.cs" />
@@ -399,6 +404,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\picture\fav_icon.png" />
     <Content Include="Content\picture\color_border.jpg" />
@@ -411,24 +417,82 @@
     <Content Include="Content\picture\infec-bg.png" />
     <Content Include="Content\picture\infec-bg1.png" />
     <Content Include="Content\picture\picjumbo-bg5.png" />
+    <Content Include="Content\picture\searchbackk.jpg" />
     <Content Include="Content\picture\story1.jpg" />
     <Content Include="Content\picture\story2.png" />
     <Content Include="Content\picture\story3.png" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\select2.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\constructive_bg_01.jpg" />
+    <Content Include="img\constructive_bg_02.jpg" />
+    <Content Include="img\constructive_bg_03.jpg" />
+    <Content Include="img\constructive_bg_04.jpg" />
+    <Content Include="img\nav-item-highlight.png" />
+    <Content Include="img\nav-item.png" />
+    <Content Include="img\underline.png" />
+    <Content Include="Protect\css\bootstrap.min.css" />
+    <Content Include="Protect\css\fontawesome-all.min.css" />
+    <Content Include="Protect\css\magnific-popup.css" />
+    <Content Include="Protect\css\tooplate-style.css" />
+    <Content Include="Protect\img\bg_mountain.jpg" />
+    <Content Include="Protect\img\constructive_bg_01.jpg" />
+    <Content Include="Protect\img\constructive_bg_02.jpg" />
+    <Content Include="Protect\img\constructive_bg_03.jpg" />
+    <Content Include="Protect\img\constructive_bg_04.jpg" />
+    <Content Include="Protect\img\nav-item-highlight.png" />
+    <Content Include="Protect\img\nav-item.png" />
+    <Content Include="Protect\img\underline.png" />
+    <Content Include="Protect\js\anime.min.js" />
+    <Content Include="Protect\js\jquery-3.2.1.min.js" />
+    <Content Include="Protect\js\jquery-3.2.1.slim.min.js" />
+    <Content Include="Protect\js\jquery-3.3.1.js" />
+    <Content Include="Protect\js\jquery.backstretch.min.js" />
+    <Content Include="Protect\js\jquery.magnific-popup.min.js" />
+    <Content Include="Protect\js\main.js" />
+    <Content Include="Protect\slick\ajax-loader.gif" />
+    <Content Include="Protect\slick\fonts\slick.svg" />
+    <Content Include="Protect\slick\slick-theme.css" />
+    <Content Include="Protect\slick\slick.css" />
+    <Content Include="Protect\slick\slick.js" />
+    <Content Include="Protect\slick\slick.min.js" />
+    <Content Include="Protect\webfonts\fa-brands-400.svg" />
+    <Content Include="Protect\webfonts\fa-regular-400.svg" />
+    <Content Include="Protect\webfonts\fa-solid-900.svg" />
     <Content Include="Scripts\all.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Protect\img\Thumbs.db" />
+    <Content Include="Protect\slick\config.rb" />
+    <Content Include="Protect\slick\fonts\slick.eot" />
+    <Content Include="Protect\slick\fonts\slick.ttf" />
+    <Content Include="Protect\slick\fonts\slick.woff" />
+    <Content Include="Protect\slick\slick-theme.less" />
+    <Content Include="Protect\slick\slick-theme.scss" />
+    <Content Include="Protect\slick\slick.less" />
+    <Content Include="Protect\slick\slick.scss" />
+    <Content Include="Protect\webfonts\fa-brands-400.eot" />
+    <Content Include="Protect\webfonts\fa-brands-400.ttf" />
+    <Content Include="Protect\webfonts\fa-brands-400.woff" />
+    <Content Include="Protect\webfonts\fa-brands-400.woff2" />
+    <Content Include="Protect\webfonts\fa-regular-400.eot" />
+    <Content Include="Protect\webfonts\fa-regular-400.ttf" />
+    <Content Include="Protect\webfonts\fa-regular-400.woff" />
+    <Content Include="Protect\webfonts\fa-regular-400.woff2" />
+    <Content Include="Protect\webfonts\fa-solid-900.eot" />
+    <Content Include="Protect\webfonts\fa-solid-900.ttf" />
+    <Content Include="Protect\webfonts\fa-solid-900.woff" />
+    <Content Include="Protect\webfonts\fa-solid-900.woff2" />
+    <Content Include="img\Thumbs.db" />
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\withusafe2 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -518,7 +582,9 @@
     <Content Include="Scripts\liquidFillGauge.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\select2.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -582,14 +648,21 @@
     <Content Include="Views\Disease_infection\Details.cshtml" />
     <Content Include="Views\Disease_infection\Edit.cshtml" />
     <Content Include="Views\Disease_infection\Index.cshtml" />
+    <Content Include="Views\symptoms\Search_warning.cshtml" />
+    <Content Include="Views\symptoms\Search_error.cshtml" />
+    <Content Include="Views\location_new\Test.cshtml" />
+    <Content Include="Views\Home\Share_experience.cshtml" />
+    <Content Include="Views\Home\Share_experienceSafe.cshtml" />
+    <Content Include="Views\Home\Share_experienceUnsafe.cshtml" />
+    <Content Include="Views\experiences\Create.cshtml" />
+    <Content Include="Views\experiences\Delete.cshtml" />
+    <Content Include="Views\experiences\Details.cshtml" />
+    <Content Include="Views\experiences\Edit.cshtml" />
+    <Content Include="Views\experiences\Index.cshtml" />
+    <Content Include="Views\Home\Protect.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />

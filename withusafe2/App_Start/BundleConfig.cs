@@ -8,6 +8,7 @@ namespace withusafe2
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleTable.EnableOptimizations = false;
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -27,13 +28,14 @@ namespace withusafe2
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      //"~/Content/solid.css",
-                      //"~/Content/brands.css",
+                      //"~/Content/tooplate-style.css",
+                      //"~/Content/magnific-popup.css",
                       "~/Content/all.css",
-                      //"~/Content/fontawesome.css",
+                      
                       "~/Content/responsive.css",
                       "~/Content/select2.min.css",
                       "~/Content/site.css"));
+
         }
     }
 }

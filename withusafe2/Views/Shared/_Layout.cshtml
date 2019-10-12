@@ -20,7 +20,8 @@
     <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
     <script src="~/Scripts/liquidFillGauge.js" language="JavaScript"></script>
 
-    @*This is used for the Select2 API*@
+    @*This is used for pie chart*@
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <style>
         .liquidFillGaugeText {
@@ -38,28 +39,29 @@
                     <a href="/home/index"><img src="~/Content/picture/iconnew.png" width="130" height="50" style="margin-left: 0px" /></a>
                 </td>
                 <td>
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <div class="container" style="padding-left:0px;">
+                        <div class="navbar-header" style="padding-left:0px;width:80px;">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
 
-                            @*@Html.ActionLink("WithU", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a style="margin-bottom:0px;" class="homefont" href="/Home/index">Home</a></li>
+                                <li class="@ViewBag.active" style="width:80px;"><a style="margin-bottom:0px;text-align:center;@ViewBag.font" href="/Home/index">Home</a></li>
                                 @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                                <li>@Html.ActionLink("Risk Precaution", "Index", "location_new")</li>
-                                <li>@Html.ActionLink("Help", "Contact", "Home")</li>
-                                <!--
-                            <li>@Html.ActionLink("Risk Assessment", "RiskAssessment", "Home")</li>
-                            <li>@Html.ActionLink("Survey", "Survey", "Home")</li><!---->
+                                <li class="@ViewBag.active1" style="@ViewBag.font1">@Html.ActionLink("Share Experiences", "Share_experience", "Home")</li>
+                                <li class="@ViewBag.active2" style="@ViewBag.font2">@Html.ActionLink("Risk Precaution", "Index", "location_new")</li>
+                                <li class="@ViewBag.active4" style="@ViewBag.font4">@Html.ActionLink("Infection Control", "Search", "Symptoms")</li>
+                                <li class="@ViewBag.active5" style="@ViewBag.font5">@Html.ActionLink("Protect Yourself", "Protect", "Home")</li>
+                                <li class="@ViewBag.active3" style="@ViewBag.font3">@Html.ActionLink("Get  Help", "Contact", "Home")</li>
+                                <li>@Html.Partial("_LoginPartial")</li>
                             </ul>
-                            <!--@Html.Partial("_LoginPartial")><!---->
+                            <div style="margin-left:-60px;">
+                                
+                            </div>
                         </div>
                     </div>
                 </td>

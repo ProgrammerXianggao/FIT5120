@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Register";
 }
-
+<div class="container">
 <h2>@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        @Html.Label("Password(Upper/Lower and special characters required)", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
         </div>
@@ -39,3 +39,5 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+</div>

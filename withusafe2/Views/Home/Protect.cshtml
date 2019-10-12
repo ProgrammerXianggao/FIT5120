@@ -1,0 +1,628 @@
+﻿
+@{
+    Layout = null;
+    
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/ico" href="~/Content/picture/fav_icon.png">
+    <title>Protect Yourself</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="~/Protect/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/Protect/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Protect/css/magnific-popup.css" />
+    <link rel="stylesheet" type="text/css" href="~/Protect/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/Protect/slick/slick-theme.css" />
+    <link rel="stylesheet" href="~/Protect/css/tooplate-style.css">
+
+    <script>
+        var renderPage = true;
+
+        if (navigator.userAgent.indexOf('MSIE') !== -1
+            || navigator.appVersion.indexOf('Trident/') > 0) {
+            /* Microsoft Internet Explorer detected in. */
+            alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+            renderPage = false;
+        }
+    </script>
+
+</head>
+
+@*<body style="background-image: url('../../Protect/img/bg_mountain.jpg');">*@
+<body style="background-color:#202864">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <table>
+            <tr>
+                <td valign="top">
+                    <a href="/home/index"><img src="~/Content/picture/iconnew.png" width="130" height="50" style="margin-left: 0px" /></a>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container-fluid tm-main">
+        <div class="row tm-main-row">
+
+            <!-- Sidebar -->
+            <div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+
+                <button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
+
+                <div class="inner">
+                    <nav id="tmMainNav" class="tm-main-nav">
+                        <ul>
+                            <li>
+                                <a href="#intro" id="tmNavLink1" class="scrolly active" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-1">
+                                    <i class="fas fa-heart tm-nav-fa-icon"></i>
+                                    <span>Violence at Work Place</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-2" data-page-type="carousel">
+                                    <i class="fas fa-heart tm-nav-fa-icon"></i>
+                                    <span>Recognise. Report. Prevent</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#company" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-3">
+                                    <i class="fas fa-heart tm-nav-fa-icon"></i>
+
+                                    <span>Learn Self-Defense Techniques</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="scrolly" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-4">
+                                    <i class="fas fa-heart tm-nav-fa-icon"></i>
+                                    <span>Make a Claim</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+
+                <!-- section 1 -->
+                <section id="tm-section-1" class="tm-section">
+                    <div class="ml-auto">
+                        <div id="tm-bg"></div>
+                        <div id="tm-wrap">
+                            <div class="tm-main-content">
+                                <div class="container tm-site-header-container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
+                                            <div class="tm-site-header">
+                                                <h1 class="mb-4">What is Violence?</h1>
+                                                <img src="~/img/underline.png" class="img-fluid mb-4">
+                                                <p>
+                                                    Unacceptable behaviour can have negative impacts
+                                                    on the physical and mental wellbeing of our community nurses. <br>
+                                                    But not everyone realises there are different types of abuse. Some examples include:
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                                            <div class="content">
+
+                                                <div class="grid">
+                                                    <div class="grid__item" id="physical-link">
+                                                        <div class="product">
+                                                            <div class="tm-nav-link">
+                                                                <i class="fas fa-hand-rock fa-3x tm-nav-icon"></i>
+                                                                <span class="tm-nav-text">Physical Abuse</span>
+                                                                <div class="product__bg"></div>
+                                                            </div>
+
+
+                                                            <div class="product__description">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-12">
+                                                                        <h2 class="tm-page-title">What is physical abuse?</h2>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p>Physical abuse happens when a person uses physical force against another person. Physical abuse can start slowly and inconspicuously, for example with throwing an object or a slap, and get more intense or worse over time.</p>
+                                                                    <p>
+                                                                        Typical Signs are:<br>
+                                                                        - shaking, slapping, pushing, punching or scratching<br>
+                                                                        - kicking<br>
+                                                                        - spitting or biting<br>
+                                                                        - trying to strangle or choke<br>
+                                                                        - using weapons<br>
+                                                                        - destroying property and throwing things<br>
+                                                                        - locking someone out of their house or in the house<br>
+                                                                        - physical restraint e.g. pinning against the wall or bed.
+
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="grid__item" id="verbal-link">
+                                                        <div class="product">
+                                                            <div class="tm-nav-link">
+                                                                <i class="fas fa-comments fa-3x tm-nav-icon"></i>
+                                                                <span class="tm-nav-text">Verbal Abuse</span>
+                                                                <div class="product__bg"></div>
+                                                            </div>
+                                                            <div class="product__description">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-12">
+                                                                        <h2 class="tm-page-title">What is verbal abuse?</h2>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p>Verbal abuse is a key feature of emotionally abusive relationships. The perpetrator consistently makes statements that negatively label a person. This has a serious impact on the self-esteem and confidence of the person experiencing the verbal abuse.</p>
+                                                                    <p>
+                                                                        Typical Signs are:<br>
+                                                                        - swearing and continual humiliation, in private or in public <br>
+                                                                        - attacks on intelligence, sexuality, body image and capacity as a parent and spouse<br>
+                                                                        - ridiculing religious beliefs or ethnic background<br>
+                                                                        - screaming, shouting, name-calling, put-downs<br>
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="grid__item" id="psycho-link">
+                                                        <div class="product">
+                                                            <div class="tm-nav-link">
+                                                                <i class="fas fa-heart fa-3x tm-nav-icon"></i>
+                                                                <span class="tm-nav-text">Psychological Abuse</span>
+                                                                <div class="product__bg"></div>
+                                                            </div>
+                                                            <div class="product__description">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-12">
+                                                                        <h2 class="                                                                                                                             tm-page-title">What is psychological abuse?</h2>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p>You can experience abuse and violence without being physically hurt. Emotional abuse does not leave physical scars but it can have a big impact on a person’s mental health and wellbeing. Someone experiencing emotional abuse can feel anxious, depressed and even suicidal.</p>
+                                                                    <p>
+                                                                        Typical Signs are:<br>
+                                                                        - creating fear, such as driving dangerously, possessing weapons, angry looks <br>
+                                                                        - destroying  property or valued possessions<br>
+                                                                        - saying that the police and the courts will not help, support or believe the victim<br>
+                                                                        - threatening to ‘out’ the person<br>
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="grid__item" id="sexual-link">
+                                                        <div class="product">
+                                                            <div class="tm-nav-link">
+                                                                <i class="fas fa-venus-mars fa-3x tm-nav-icon"></i>
+                                                                <span class="tm-nav-text">Sexual Abuse</span>
+                                                                <div class="product__bg"></div>
+                                                            </div>
+                                                            <div class="product__description">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-12">
+                                                                        <h2 class="                                                                                                                             tm-page-title">What is sexual abuse?</h2>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p>
+                                                                        Sexual abuse is any form of forced or unwanted sexual activity. The perpetrator of sexual abuse may use physical force, make threats or take advantage of a person unable to give consent.<br>
+
+                                                                        Sexual abuse mainly happens between people who know each other and can occur in the context of domestic violence.<br>
+
+                                                                        Sexual abuse has impacts on a person’s physical and emotional health. It can lead to long-term mental health issues, including anxiety and post-traumatic stress disorder.
+                                                                    </p>
+                                                                    <p>
+                                                                        Typical Signs are:<br>
+                                                                        - creating fear, such as driving dangerously, possessing weapons, angry looks <br>
+                                                                        - destroying  property or valued possessions<br>
+                                                                        - saying that the police and the courts will not help, support or believe the victim<br>
+                                                                        - threatening to ‘out’ the person<br>
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid__item" id="image-link">
+                                                        <div class="product">
+                                                            <div class="tm-nav-link">
+                                                                <i class="fas fa-camera fa-3x tm-nav-icon"></i>
+                                                                <span class="tm-nav-text">Imaged-based Abuse</span>
+                                                                <div class="product__bg"></div>
+                                                            </div>
+                                                            <div class="product__description">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-12">
+                                                                        <h2 class="tm-page-title">What is imaged-based abuse?</h2>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p>Image-based abuse is when someone shares, or threatens to share, intimate photos without the consent of the person in the photo.</p>
+                                                                    <p>
+                                                                        Typical Signs are:<br>
+                                                                        - accessing personal computer files to steal images<br>
+                                                                        - Photoshopping a person's image onto a sexually explicit photo or video<br>
+                                                                        - staking images of a woman's cleavage or under her skirt<br>
+                                                                        - secretly filming sexual assault<br>
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="grid__item" id="spiritual-link">
+                                                        <div class="product">
+                                                            <div class="tm-nav-link">
+                                                                <i class="fas fa-book fa-3x tm-nav-icon"></i>
+                                                                <span class="tm-nav-text">Spiritual Abuse</span>
+                                                                <div class="product__bg"></div>
+                                                            </div>
+                                                            <div class="product__description">
+                                                                <div class="row mb-3">
+                                                                    <div class="col-12">
+                                                                        <h2 class="tm-page-title">What is Spiritual abuse?</h2>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <p>
+                                                                        Spiritual abuse is the denial or use of spiritual or religious beliefs and practices to control and dominate a person. Spiritual abuse can impact on a someone’s self-esteem and confidence, make them feel guilty, damage their spiritual experiences and isolate them.
+                                                                        <br>Spiritual abuse can happen as part of domestic violence and alongside other types of abuse, for example physical abuse, emotional abuse, financial abuse and sexual abuse.
+                                                                    </p>
+                                                                    <p>
+                                                                        Typical Signs are:<br>
+                                                                        - using spiritual or religious beliefs to scare, hurt or control you<br>
+                                                                        - stopping you or shaming you for practising your spiritual or religious beliefs<br>
+                                                                        - forcing you to take part in spiritual or religious practices when you don't want to<br>
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- section 2 -->
+                <section id="tm-section-2" class="tm-section tm-section-carousel">
+                    <div class="row mb-2">
+                        <header class="col-xl-12"><h2 class="tm-text-shadow"><br><br><br><br>We need everyone to work together to ‘Recognise. Report. Prevent’.<br><br><br></h2></header>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fas fa-eye tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Recognise</h3>
+                                    <p> You should be aware of what behaviour is acceptable and unacceptable. Recognise it within yourself, and in those around you.<br><br></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fab fa-viber mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Report</h3>
+                                    <p>If you witness or experience violent or aggressive behaviour, do not get involved. Report it immediately to someone at the healthcare facility, or to the police.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <div class="media tm-bg-transparent-black tm-border-white">
+                                <i class="fas fa-shield-alt mr-4 tm-icon-circled tm-icon-media"></i>
+                                <div class="media-body">
+                                    <h3>Prevent</h3>
+                                    <p>Recognise unacceptable behaviour and unreasonable reactions in yourself. Notice your triggers and take time out before things escalate. If you’re an employer or in management at a healthcare service, ensure you investigate incidents, review and implement controls to eliminate or reduce the risks, and encourage your workers to report incidents. WithU's risk assessment features can help you to mitigate the risks.</p>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- section 3 -->
+                <section id="tm-section-3" class="tm-section">
+                    <div class="row mb-4">
+                        <header class="col-xl-12"><h2 class="tm-text-shadow" style="padding-top:30px;">   <br>Learn Self-Defense Techniques</h2></header>
+                        <p>Training in self-defence is important – acquiring the tools and techniques to defend against attack could be life-saving.  Self-defence skills give an increased level of confidence and self-esteem, and result in improved mental well-being. This self-defense tutorial is produced by <a href="https://www.youtube.com/playlist?list=PLM-MdpqjmkCOfGPp0_86L3SL7zfonxkvc">Blauer</a>, and you can watch more episodes on their official Youtube (<a href="https://www.youtube.com/playlist?list=PLM-MdpqjmkCOfGPp0_86L3SL7zfonxkvc">>>More self-defense tutorials by Blauer</a>).</p>
+                    </div>
+                    <div class="row">
+                        <iframe width="1120" height="630" src="https://www.youtube.com/embed/lCBbb7lHctY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <!-- section 4 -->
+                <section id="tm-section-4" class="tm-section">
+
+                    <div class="row" style="padding-top:30px;">
+
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <br><br>
+                            <h3>Why making a claim?</h3>
+                            <img src="~/img/underline.png" class="img-fluid mb-4">
+                            <h5>(from WorkSafe Victoria)</h5>
+                            <p>
+                                Many incidents that happen to first responders go unreported, which makes it difficult to know the full impact of violence on workers in this sector. This results in a great number of work related injuries and illnesses that need to be considered, with processes put into place to reduce, and if possible eliminate workplace violence completely.<br>
+                                We hope all community nurses can report their bad experiences and claim their compensation through their insurance company.
+                            </p>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <h3> <br><br>What can you claim?</h3>
+                            <img src="~/img/underline.png" class="img-fluid mb-4">
+                            <h4><i class="icon-file-text-alt"></i> Claiming weekly payments for time lost from work</h4>
+                            <p>
+                                If you are injured and need time off work you can make a claim for weekly payments to cover part of your lost income.
+                            </p>
+
+                            <h4><i class="icon-file-text-alt"></i> Claiming for treatment expenses</h4>
+                            <p>
+                                If you are injured and receive medical treatment, you can have your medical and like expenses paid directly to your provider, or reimbursed to you. Ensure you keep your receipts.
+                            </p>
+                        </div>
+                        <!-- ===== Third Tab ===== -->
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <h3>How to make a claim?</h3>
+                            <img src="~/img/underline.png" class="img-fluid mb-4">
+                            <p style="padding-top:0px;">
+                                If you suffered a workplace violence, the workers compensation scheme may provide you with weekly benefits, medical and hospital expenses, rehabilitation services, certain personal items and a lump sum payment for permanent impairment on the basis set by the particular scheme.
+                            </p>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                            <h3>WorkSafe Offices<br></h3>
+                            <img src="~/img/underline.png" class="img-fluid mb-4">
+                            <h4><b>Geelong (head office)</b></h4>
+                            <p>1 Malop Street<br>Geelong Victoria 3220 <br>Phone: 03 9641 1555</p>
+                            <a href="https://www.worksafe.vic.gov.au/find-worksafe-office">>> WorkSafe Victoria Official Website</a>
+                        </div><!-- /.container -->
+                    </div>
+                </section>
+
+            </div>	<!-- .tm-content -->
+        </div>	<!-- row -->
+    </div>
+
+
+
+    <div id="preload-01"></div>
+    <div id="preload-02"></div>
+    <div id="preload-03"></div>
+    <div id="preload-04"></div>
+
+    <!-- load JS -->
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="~/Protect/js/main.js"></script>
+    <script src="~/Protect/js/jquery-3.2.1.slim.min.js"></script>         <!-- https://jquery.com/ -->
+    <script src="~/Protect/slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
+    <script src="~/Protect/js/anime.min.js"></script>                     <!-- http://animejs.com/ -->
+
+    <script type="text/javascript" src="~/Protect/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Protect/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="~/Protect/js/jquery.backstretch.min.js"></script>
+    @*<script type="text/javascript" src="~/Protect/js/jquery-3.3.1.js"></script>*@
+    <script type="text/javascript" src="~/Protect/slick/slick.min.js"></script> <!-- Slick Carousel -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+        var home = document.getElementById("go_home");
+        btn.οnclick = function () {
+            alert("hello world");
+        }
+    </script>
+    <script>
+
+        var sidebarVisible = false;
+        var currentPageID = "#tm-section-1";
+
+        // Setup Carousel
+        function setupCarousel() {
+
+            // If current page isn't Carousel page, don't do anything.
+            if ($('#tm-section-2').css('display') == "none") {
+            }
+            else {	// If current page is Carousel page, set up the Carousel.
+
+                var slider = $('.tm-img-slider');
+                var windowWidth = $(window).width();
+
+                if (slider.hasClass('slick-initialized')) {
+                    slider.slick('destroy');
+                }
+
+                if (windowWidth < 640) {
+                    slider.slick({
+                        dots: true,
+                        infinite: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    });
+                }
+                else if (windowWidth < 992) {
+                    slider.slick({
+                        dots: true,
+                        infinite: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    });
+                }
+                else {
+                    // Slick carousel
+                    slider.slick({
+                        dots: true,
+                        infinite: false,
+                        slidesToShow: 3,
+                        slidesToScroll: 2
+                    });
+                }
+
+                // Init Magnific Popup
+                $('.tm-img-slider').magnificPopup({
+                    delegate: 'a', // child items selector, by clicking on it popup will open
+                    type: 'image',
+                    gallery: { enabled: true }
+                    // other options
+                });
+            }
+        }
+
+        // Setup Nav
+        function setupNav() {
+            // Add Event Listener to each Nav item
+            $(".tm-main-nav a").click(function (e) {
+                e.preventDefault();
+
+                var currentNavItem = $(this);
+                changePage(currentNavItem);
+
+                setupCarousel();
+                setupFooter();
+
+                // Hide the nav on mobile
+                $("#tmSideBar").removeClass("show");
+            });
+        }
+
+        function changePage(currentNavItem) {
+            // Update Nav items
+            $(".tm-main-nav a").removeClass("active");
+            currentNavItem.addClass("active");
+
+            $(currentPageID).hide();
+
+            // Show current page
+            currentPageID = currentNavItem.data("page");
+            $(currentPageID).fadeIn(1000);
+
+            // Change background image
+            var bgImg = currentNavItem.data("bgImg");
+            $.backstretch("img/" + bgImg);
+        }
+
+        // Setup Nav Toggle Button
+        function setupNavToggle() {
+
+            $("#tmMainNavToggle").on("click", function () {
+                $(".sidebar").toggleClass("show");
+            });
+        }
+
+        // If there is enough room, stick the footer at the bottom of page content.
+        // If not, place it after the page content
+        function setupFooter() {
+
+            var padding = 100;
+            var footerPadding = 40;
+            var mainContent = $("section" + currentPageID);
+            var mainContentHeight = mainContent.outerHeight(true);
+            var footer = $(".footer-link");
+            var footerHeight = footer.outerHeight(true);
+            var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+            var windowHeight = $(window).height();
+
+            if (totalPageHeight > windowHeight) {
+                $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+                footer.css("bottom", footerHeight + "px");
+            }
+            else {
+                $(".tm-content").css("margin-bottom", "0");
+                footer.css("bottom", "20px");
+            }
+        }
+
+        // Everything is loaded including images.
+        $(window).on("load", function () {
+
+            // Render the page on modern browser only.
+            if (renderPage) {
+                // Remove loader
+                $('body').addClass('loaded');
+
+                // Page transition
+                var allPages = $(".tm-section");
+
+                // Handle click of "Continue", which changes to next page
+                // The link contains data-nav-link attribute, which holds the nav item ID
+                // Nav item ID is then used to access and trigger click on the corresponding nav item
+                var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
+
+                if (linkToAnotherPage != null) {
+
+                    linkToAnotherPage.on("click", function () {
+                        var navItemToHighlight = linkToAnotherPage.data("navLink");
+                        $("a" + navItemToHighlight).click();
+                    });
+                }
+
+                // Hide all pages
+                allPages.hide();
+
+                $("#tm-section-1").fadeIn();
+
+                // Set up background first page
+                var bgImg = $("#tmNavLink1").data("bgImg");
+
+                $.backstretch("img/" + bgImg, { fade: 500 });
+
+                // Setup Carousel, Nav, and Nav Toggle
+                setupCarousel();
+                setupNav();
+                setupNavToggle();
+                setupFooter();
+
+                // Resize Carousel upon window resize
+                $(window).resize(function () {
+                    setupCarousel();
+                    setupFooter();
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
+

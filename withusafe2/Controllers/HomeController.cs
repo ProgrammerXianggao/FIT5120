@@ -13,8 +13,12 @@ namespace withusafe2.Controllers
         private PatientLocationIdModel db2 = new PatientLocationIdModel();
         //private LocationModel db3 = new LocationModel();
         private Location_newModel db4 = new Location_newModel();
+        private ShareModel db5 = new ShareModel();
+        private ExperienceModel db6 = new ExperienceModel();
         public ActionResult Index()
         {
+            ViewBag.active = "active";
+            @ViewBag.font = "font-weight:900;font-style: italic;";
             return View();
         }
         public ActionResult error()
@@ -31,6 +35,8 @@ namespace withusafe2.Controllers
 
         public ActionResult Contact()
         {
+            ViewBag.active3 = "active";
+            ViewBag.font3 = "font-weight:900;font-style: italic;";
             ViewBag.Message = "Your contact page.";
 
             return View();
@@ -38,6 +44,8 @@ namespace withusafe2.Controllers
         [HttpPost]
         public ActionResult Survey(quiz2 u)
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             //highRisk highRisk = db.h;
             //highRisk.First = 1;
             HighRisk highRisk = db.HighRisks.Find(1);
@@ -47,9 +55,10 @@ namespace withusafe2.Controllers
             if (u.forth) { highRisk.Fourth = 1; } else { highRisk.Fourth = 0; }
             if (u.fifth) { highRisk.Fifth = 1; } else { highRisk.Fifth = 0; }
             if (u.sixth) { highRisk.Sixth = 1; } else { highRisk.Sixth = 0; }
+            if (u.seventh) { highRisk.Seventh = 1; } else { highRisk.Seventh = 0; }
             db.HighRisks.Add(highRisk);
             db.SaveChanges();
-            return RedirectToAction("quizz");
+            return RedirectToAction("report");
         }
 
         public ActionResult test()
@@ -63,18 +72,24 @@ namespace withusafe2.Controllers
         }
         public ActionResult quiz()
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             ViewBag.Message = "Risk Prevention";
-
+            //return RedirectToAction("Report");
             return View();
         }
 
         public ActionResult quizz()
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             ViewBag.Message = "Risk Prevention";
             return View();
         }
         public ActionResult Report()
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             var checkboxones = db.Checkboxones.ToList();
             var checkboxtwos = db.Checkboxtwoes.ToList();
             Gender gender = db.Genders.ToList().Last();
@@ -100,21 +115,12 @@ namespace withusafe2.Controllers
             if (highRisk.Fourth == 1) { ViewBag.Checkone += checkboxones[3].content + "; "; }
             if (highRisk.Fifth == 1) { ViewBag.Checkone += checkboxones[4].content + "; "; }
             if (highRisk.Sixth == 1) { ViewBag.Checkone += checkboxones[5].content + "; "; }
-            if (highRisk.Seventh == 1) { ViewBag.Checkone += checkboxones[6].content; }
-            ViewBag.Checkone = ViewBag.Checkone.TrimEnd(' ').TrimEnd(';');
-            ViewBag.Checktwo = "";
-            if (precaution.First == 0) { ViewBag.Checktwo += checkboxtwos[0].content += "; "; }
-            if (precaution.Second == 0) { ViewBag.Checktwo += checkboxtwos[1].content += "; "; }
-            if (precaution.Third == 0) { ViewBag.Checktwo += checkboxtwos[2].content += "; "; }
-            if (precaution.Fourth == 0) { ViewBag.Checktwo += checkboxtwos[3].content += "; "; }
-            if (precaution.Fifth == 0) { ViewBag.Checktwo += checkboxtwos[4].content += "; "; }
-            if (precaution.Sixth == 0) { ViewBag.Checktwo += checkboxtwos[5].content += "; "; }
-            if (precaution.Seventh == 0) { ViewBag.Checktwo += checkboxtwos[6].content += "; "; }
-            if (precaution.Eighth == 0) { ViewBag.Checktwo += checkboxtwos[7].content += "; "; }
-            if (precaution.Nineth == 0) { ViewBag.Checktwo += checkboxtwos[8].content ; }
-            ViewBag.Checktwo = ViewBag.Checktwo.TrimEnd(' ').TrimEnd(';');
-            if (ViewBag.Checkone.Length > 3) { ViewBag.Checkone = "The client: " + ViewBag.Checkone; }
-            if (ViewBag.Checktwo.Length > 3) { ViewBag.Checktwo = "Safety Precaution not checked: " + ViewBag.Checktwo; }
+            if (highRisk.Seventh == 1) { ViewBag.Checkone += checkboxones[6].content + "; "; }
+
+
+            
+            ViewBag.Checkone = "The patient has following high risk behaviours: " + ViewBag.Checkone;
+
             ViewBag.notification = locationRank;
             if ((gender.genderr != "prefer not to say") && (age.Age1 == "prefer not to say"))
             {
@@ -153,19 +159,19 @@ namespace withusafe2.Controllers
                 }
             }
             var result = decimal.Round((assultno / totalno), 2);
-            if (result > (decimal)0.009) { ViewBag.RiskRate = "7.7"; }
+            if (result > (decimal)0.009) { ViewBag.RiskRate = "7.7"; ViewBag.Risklevel = "Low"; }
             if (result > (decimal)0.011) { ViewBag.RiskRate = "15.4"; }
             if (result > (decimal)0.02) { ViewBag.RiskRate = "23.1"; }
             if (result > (decimal)0.021) { ViewBag.RiskRate = "30.8"; }
-            if (result > (decimal)0.028) { ViewBag.RiskRate = "38.5"; }
+            if (result > (decimal)0.028) { ViewBag.RiskRate = "38.5"; ViewBag.Risklevel = "Medium"; }
             if (result > (decimal)0.0351) { ViewBag.RiskRate = "46.2"; }
             if (result > (decimal)0.0352) { ViewBag.RiskRate = "53.8"; }
             if (result > (decimal)0.047) { ViewBag.RiskRate = "61.5"; }
-            if (result > (decimal)0.064) { ViewBag.RiskRate = "69.2"; }
+            if (result > (decimal)0.064) { ViewBag.RiskRate = "69.2"; ViewBag.Risklevel = "High"; }
             if (result > (decimal)0.066) { ViewBag.RiskRate = "76.9"; }
             if (result > (decimal)0.075) { ViewBag.RiskRate = "84.6"; }
             if (result > (decimal)0.113) { ViewBag.RiskRate = "92.3"; }
-
+            
 
             //if (result > (decimal)0.009) { ViewBag.notification2 = "The Risk index of your characteristic is 7.7"; }
             //if (result > (decimal)0.009) { ViewBag.notification2 = "The Risk index of your characteristic is 7.7"; }
@@ -189,7 +195,8 @@ namespace withusafe2.Controllers
         [HttpPost]
         public ActionResult Reportt(quizz q)
         {
-
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             ViewBag.Message = "Risk Prevention";
             Precaution precaution = db.Precautions.Find(1);
             if (q.firstt) { precaution.First = 1; } else { precaution.First = 0; }
@@ -210,6 +217,8 @@ namespace withusafe2.Controllers
 
         public ActionResult Age()
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             ViewBag.Message = "Please select your age group ";
             return View();
         }
@@ -227,6 +236,8 @@ namespace withusafe2.Controllers
 
         public ActionResult LocationNext(int? id)
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             PatienLocationId patienLocationId = db2.PatienLocationIds.Find(1);
             patienLocationId.PLI = id;
             db2.PatienLocationIds.Add(patienLocationId);
@@ -237,6 +248,8 @@ namespace withusafe2.Controllers
 
         public ActionResult Gender()
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             //PatienLocationId patienLocationId = db2.PatienLocationIds.Find(1);
             //patienLocationId.PLI = id;
             //db2.PatienLocationIds.Add(patienLocationId);
@@ -246,7 +259,8 @@ namespace withusafe2.Controllers
         }
         public ActionResult GenderNext()
         {
-
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             ViewBag.Message = "Please select your gender:";
             var q = Request["method"];
             Gender gender = db.Genders.Find(1);
@@ -263,6 +277,67 @@ namespace withusafe2.Controllers
         public ActionResult Help()
         {
             //ViewBag.Message = "Your Patient is Located in: ";
+            return View();
+        }
+        [Authorize]
+        public ActionResult Share_experience()
+        {
+            ViewBag.active1 = "active";
+            ViewBag.font1 = "font-style:italic;font-weight:800;";
+            ViewBag.experience = db6.experiences.ToList();
+            //ViewBag.Message = "Your Patient is Located in: ";
+            return View(db4.location_new.ToList());
+        }
+
+        public ActionResult Share_next()
+        {
+            var location = Request.Form["states"];
+            var safe = Request.Form["SA"];
+            var time = Request.Form["time"];
+            //var c = "test";
+            Share share = db5.Shares.Find(1);
+            share.Share_records = location + "-" + safe + "-" + time;
+            db5.Shares.Add(share);
+            db5.SaveChanges();
+            return RedirectToAction("Create","experiences");
+
+        }
+        public ActionResult Share_experienceSafe(/*string location,string time*/)
+        {
+            Share share = db5.Shares.ToList().Last();
+            var list = share.Share_records.Split('-');
+            var location = list[0];
+            var safe = list[1]; 
+            var time = list[2];
+
+            ViewBag.active1 = "active";
+            ViewBag.font1 = "font-style:italic;font-weight:800;";
+
+            ViewBag.location = location;
+
+            ViewBag.experience = db6.experiences.ToList();
+            var locationinfo = db4.location_new.Where(l => l.Suburb == location).ToList();
+            location_new location_New = db4.location_new.Find(locationinfo[0].Id);
+            if (time != "longer") {
+                if (safe == "safe") { location_New.safe_count = location_New.safe_count + 1; }
+                else { location_New.unsafe_count = location_New.unsafe_count + 1; }
+            }
+            db4.SaveChanges();
+            if (locationinfo[0].safe_count + locationinfo[0].unsafe_count == 0) { ViewBag.count = 0; }
+            ViewBag.safe = locationinfo[0].safe_count;
+            ViewBag.notsafe = locationinfo[0].unsafe_count;
+            return View(db4.location_new.ToList());
+        }
+        //public ActionResult Share_experienceUnsafe(string location,string time)
+        //{
+        //    ViewBag.active1 = "active";
+        //    ViewBag.font1 = "font-style:italic;font-weight:800;";
+
+        //    ViewBag.location = location;
+        //    return View(db4.location_new.ToList());
+        //}
+        public ActionResult Protect()
+        {
             return View();
         }
     }

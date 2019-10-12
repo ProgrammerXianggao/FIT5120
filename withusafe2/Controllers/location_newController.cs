@@ -17,9 +17,16 @@ namespace withusafe2.Controllers
         // GET: location_new
         public ActionResult Index()
         {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
             return View(db.location_new.ToList());
         }
-        
+        public ActionResult Test()
+        {
+            ViewBag.active2 = "active";
+            ViewBag.font2 = "font-style:italic;font-weight:800;";
+            return View(db.location_new.ToList());
+        }
 
         // GET: location_new/Details/5
         public ActionResult Details(int? id)

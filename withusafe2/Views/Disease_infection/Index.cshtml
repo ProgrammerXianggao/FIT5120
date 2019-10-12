@@ -43,7 +43,7 @@
 </style>
 <div class="container">
 
-    <h2 class="infec-title" align="center">Infectious Control</h2>
+    <h2 class="infec-title" align="center">Infection Control</h2>
 
     <p class="infec-text" align="center">
         Infections can spread in any environment. The advice in this guide is taken from Australian Guidelines for the Prevention and Control of Infection in Healthcare, 2010 by the National Health and Medical Research Council (NHMRC).<br />
@@ -54,99 +54,124 @@
     <i class="fas fa-user-ninja vanished"></i>
     <i class="fab fa-facebook"></i>*@
 
-    <div class="container" style="border: 1px solid #808080; padding: 10px;">
+    <div class="container" style=" padding: 10px;">
         <div class="bs-callout bs-callout-danger">
-        <div class="row">
-            <div class="col-xs-4 col-sm-3 col-md-2.5 fadeInDown">
-                <div class="tab-wrap">
-                    <div class="media">
-                        <h4>Potential disease(s) that match  your symptoms</h4>
-                        <div class="parrent">
-                            <ul class="nav nav-tabs nav-stacked">
-                                @for (int a = 0; a < (Model.Count()); a++)
+            <div class="row">
+                <div class="col-xs-4 col-sm-3  fadeInDown">
+                    <div class="tab-wrap">
+                        <div class="media">
+                            <h4>Potential disease(s) that match  your symptoms</h4>
+                            <div class="parrent">
+                                <ul class="nav nav-tabs nav-stacked">
+                                    @for (int a = 0; a < (Model.Count()); a++)
+                                    {
+                                        if (a == 0)
+                                        {
+                                            <li class="active">
+                                                <a href="@("#tab" + Html.DisplayFor(modelItem => (Model.ToList()[0].Id)))" data-toggle="tab" class="tehnical" style="font-size:15px; font-weight:700;">
+
+                                                    @(Html.DisplayFor(modelItem => Model.ToList()[0].Disease_name))
+                                                    @if (Model.ToList()[0].Rate == 1)
+                                                    {
+                                                        <p style="font-size:11px;color:#ff0000;margin-top:8px;">Infective!!!</p>
+                                                    }
+
+                                                </a>
+
+
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li class="">
+                                                <a href="@("#tab" + Html.DisplayFor(modelItem => (Model.ToList()[a].Id)))" data-toggle="tab" class="tehnical" style="font-size:15px; font-weight:700;">
+
+                                                    @(Html.DisplayFor(modelItem => Model.ToList()[a].Disease_name))
+                                                    @if (Model.ToList()[a].Rate == 1)
+                                                    {
+                                                        <p style="font-size:11px;color:#ff0000;margin-top:8px;">Infective!!!</p>
+                                                        //Html.Display("This is infective");
+                                                    }
+                                                </a>
+
+                                            </li>
+                                        }
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top:30px">
+                        <input type="button" class="btn btn-success" value="Print this page" onclick="printpage()" />
+                    </div>
+
+
+                </div>
+
+                <div class="col-xs-8 col-sm-9 " style="padding-top:30px">
+                    <div class="parrent media-body" style="background-color: #E2EEF3; border-radius: 15px 50px; margin-top:60px; padding-left:20px;padding-top:20px">
+                        <div class="tab-content">
+                            @for (int a = 0; a < (Model.Count()); a++)
+                            {
+                                if (a == 0)
                                 {
-                                    if (a == 0)
-                                    {
-                                        <li class="active">
-                                            <a href="@("#tab" + Html.DisplayFor(modelItem => (Model.ToList()[0].Id)))" data-toggle="tab" class="tehnical" style="font-size:15px; font-weight:700;">
+                                    <div class="tab-pane fade active in text-left" id="@("tab" + Html.DisplayFor(modelItem => (Model.ToList()[0].Id)))">
+                                        <p style="font-size:30px;"><i class="fas fa-puzzle-piece" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">  Symptom Match:</span><span style="font-size:25px">@(ViewBag.input + "/" + Model.ToList()[0].Symptoms.Split(',').Count())</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-certificate" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Other Name:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Other_names)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-capsules" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Treatment:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Treatment)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-book-open" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   The exact symptoms of the disease:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Signs)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-clinic-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Infection Control:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Infectous_control)</span></p>
 
-                                                @(Html.DisplayFor(modelItem => Model.ToList()[0].Disease_name))
-                                                @if (Model.ToList()[0].Rate == 1)
-                                                {
-                                                    <p style="font-size:11px;color:#ff0000;margin-top:8px;">Infective!!!</p>
-                                                }
-
-                                            </a>
-
-
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="">
-                                            <a href="@("#tab" + Html.DisplayFor(modelItem => (Model.ToList()[a].Id)))" data-toggle="tab" class="tehnical" style="font-size:15px; font-weight:700;">
-
-                                                @(Html.DisplayFor(modelItem => Model.ToList()[a].Disease_name))
-                                                @if (Model.ToList()[a].Rate == 1)
-                                                {
-                                                    <p style="font-size:11px;color:#ff0000;margin-top:8px;">Infective!!!</p>
-                                                    //Html.Display("This is infective");
-                                                }
-                                            </a>
-
-                                        </li>
-                                    }
+                                        <p style="font-size:30px;"><i class="fas fa-briefcase-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Medication:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Medication)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-sad-tear" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Symptoms:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Symptoms)</span></p>
+                                        @*<p>Symptoms</p>
+                                    <p>@Html.DisplayFor(modelItem => Model.ToList()[0].Symptoms)</p>*@
+                                    </div>
                                 }
+                                else
+                                {
+                                    <div class="tab-pane fade" id="@("tab" + Html.DisplayFor(modelItem => (Model.ToList()[a].Id)))">
+                                        <p style="font-size:30px;"><i class="fas fa-puzzle-piece" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">  Symptom Match:</span><span style="font-size:25px">@(ViewBag.input + "/" + Model.ToList()[a].Symptoms.Split(',').Count())</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-certificate" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Other Name:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Other_names)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-capsules" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Treatment:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Treatment)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-book-open" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   The exact symptoms of the disease:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Signs)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-clinic-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Infectious Control:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Infectous_control)</span></p>
 
-                            </ul>
+                                        <p style="font-size:30px;"><i class="fas fa-briefcase-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Medication:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Medication)</span></p>
+                                        <p style="font-size:30px;"><i class="fas fa-sad-tear" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Symptoms:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Symptoms)</span></p>
+
+                                        @*<p>Symptoms</p>
+                                    <p>@Html.DisplayFor(modelItem => Model.ToList()[a].Symptoms)</p>*@
+                                    </div>
+                                }
+                            }
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-8 col-sm-9 col-md-9.5" style="padding-top:30px">
-                <div class="parrent media-body" style="background-color: #E2EEF3; border-radius: 15px 50px; margin-top:60px; padding-left:20px;padding-top:20px">
-                    <div class="tab-content">
-                        @for (int a = 0; a < (Model.Count()); a++)
-                        {
-                            if (a == 0)
-                            {
-                                <div class="tab-pane fade active in text-left" id="@("tab" + Html.DisplayFor(modelItem => (Model.ToList()[0].Id)))">
-                                    <p style="font-size:30px;"><i class="fas fa-puzzle-piece" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">  Symptom Match:</span><span style="font-size:25px">@(ViewBag.input + "/" + Model.ToList()[0].Symptoms.Split(',').Count())</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-certificate" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Other Name:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Other_names)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-capsules" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Treatment:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Treatment)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-book-open" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   The exact symptoms of the disease:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Signs)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-clinic-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Infectous Control:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Infectous_control)</span></p>
-                                    
-                                    <p style="font-size:30px;"><i class="fas fa-briefcase-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Medication:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Medication)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-sad-tear" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Symptoms:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[0].Symptoms)</span></p>
-                                    @*<p>Symptoms</p>
-                                    <p>@Html.DisplayFor(modelItem => Model.ToList()[0].Symptoms)</p>*@
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="tab-pane fade" id="@("tab" + Html.DisplayFor(modelItem => (Model.ToList()[a].Id)))">
-                                    <p style="font-size:30px;"><i class="fas fa-puzzle-piece" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">  Symptom Match:</span><span style="font-size:25px">@(ViewBag.input + "/" + Model.ToList()[a].Symptoms.Split(',').Count())</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-certificate" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Other Name:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Other_names)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-capsules" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Treatment:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Treatment)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-book-open" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   The exact symptoms of the disease:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Signs)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-clinic-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Infectous Control:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Infectous_control)</span></p>
+           
 
-                                    <p style="font-size:30px;"><i class="fas fa-briefcase-medical" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Medication:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Medication)</span></p>
-                                    <p style="font-size:30px;"><i class="fas fa-sad-tear" style="color:tomato; font-size: 1em;"></i><span style="font-weight:600">   Symptoms:</span><span style="font-size:25px">@Html.DisplayFor(modelItem => Model.ToList()[a].Symptoms)</span></p>
+            
+          
 
-                                    @*<p>Symptoms</p>
-                                    <p>@Html.DisplayFor(modelItem => Model.ToList()[a].Symptoms)</p>*@
-                                </div>
-                            }
-                        }
-                        
-                    </div>
-                </div>
+            <div style="text-align:center">
+                <br>
+                <br>
+                <table style="width:70%;">
+                <tr>
+                    <td>
+                <a href="~/symptoms/Search" class="btn green" style="width:120px">Previous</a>
+                        </td>
+                    <td align="right">
+                <a href="~/Home/Index" class="btn green" style="width:120px;">Home</a>
+                        </td>
+                </tr>
+                </table>
+
             </div>
         </div>
-        <input type="button" class="alert-danger" value="Print this page" onclick="printpage()" />
-    </div>
 
 
 

@@ -1,0 +1,239 @@
+﻿@model withusafe2.Models.experience
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .biubiubiu {
+        left: 20px;
+        /*top: 160px;*/
+        /*width: 380px;
+        height: 742px;*/
+        padding-top: 20px;
+        line-height: 20px;
+        border-radius: 10px;
+        background-color: rgba(55, 58, 66, 0.12);
+        text-align: center;
+        border: 1px solid rgba(187, 187, 187, 1);
+    }
+
+    .piu {
+        left: 20px;
+        padding-top: 20px;
+        line-height: 20px;
+        /*border-radius: 10px;*/
+        /*background-color: rgba(55, 58, 66, 0.12);*/
+        text-align: center;
+        /*border: 1px solid rgba(187, 187, 187, 1);*/
+    }
+
+    input[type="radio"] + label::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 18px;
+        width: 1em;
+        height: 1em;
+        margin-right: .4em;
+        border-radius: 50%;
+        border: 1px solid #01cd78;
+        text-indent: .15em;
+        padding: .1em;
+    }
+
+    input[type="radio"]:checked + label::before {
+        background-color: #01cd78;
+        background-clip: content-box;
+    }
+
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+</style>
+<div class="container">
+    <h2></h2>
+    <div class="row">
+
+        <div class="col-lg-3 biubiubiu">
+            <p style="color:#499FA4;font-size:26px;">Instructions</p>
+            <p>
+                <span style="font-weight:800;">What's your experience?</span>
+                Tell us about your experience of  visiting a patient.
+                Marking your visit to the patient is safe or not . Your marks will be collected based on the geographic location of the community to which the patient belongs.
+                We appreciate your sharing , and your experience will help other community nurses to identify and mitigate the risks.
+            </p>
+            <p>
+                <span style="font-weight:800;">What happens to your shared experiences?</span>
+                We hope you can share your true unsafe experience (if any).
+                We will read your experience and show it on this web site with your permission.
+                When we publish your experience we will email you. We will also try to email staff in the services who need to see it.
+                We <span style="font-weight:800;">DO NOT</span> share confidential personal details of you and your patients with anyone else.
+            </p>
+        </div>
+        <div class="col-lg-8 piu">
+            <ul class="nav nav-tabs nav-stacked" style="list-style-type:none;overflow:hidden">
+                <li class="active" style="float:left">
+                    <a href="#tab1" data-toggle="tab" class="tehnical" style="font-size:15px; font-weight:700;">
+
+                        Share your Experience
+
+                    </a>
+                </li>
+                <li style="float:left">
+                    <a href="#tab2" data-toggle="tab" class="tehnical" style="font-size:15px; font-weight:700;">
+
+
+                        Listen to Others' Experience
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div class="tab-pane fade active in text-left" id="tab1">
+                    <div class="panel panel-success">
+                       
+                        <div class="panel-heading"><i class="fas fa-book-open"></i>  Tell us your story</div>
+                        <div class="panel-body">
+                            <h3>@ViewBag.message</h3>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("Category", ViewBag.list.Items as List<SelectListItem>, htmlAttributes: new { @class = "form-control"})
+                                            @*@Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })*@
+                                            @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Title(Required)", htmlAttributes: new { @class = "control-label col-md-2" }) 
+
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control"} })
+                                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Content(Minimum 20 words)", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control", @style = "height:120px;" } })
+                                            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" style="display: none">
+                                        @Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("Visible", ViewBag.visible.Items as List<SelectListItem>, htmlAttributes: new { @class = "form-control select2_demo_4" })
+                                            @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Allow published?", htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("Published", ViewBag.yes.Items as List<SelectListItem>, htmlAttributes: new { @class = "form-control select2_demo_4", @style = "width:80px;" })
+                                            @Html.ValidationMessageFor(model => model.Published, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Submit" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade in text-left" id="tab2">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                <p>Category</p>
+                            </th>
+                            <th>
+                                <p>Title</p>
+                            </th>
+                            <th>
+                                <p>Content</p>
+                            </th>
+                            <th>
+                                <p>Visible</p>
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in ViewBag.experience)
+                        {
+                            if (item.Visible == "1")
+                            {
+                                <tr>
+                                    <td>
+                                        @item.Category
+                                    </td>
+                                    <td>
+                                        @item.Title
+                                    </td>
+                                    <td>
+                                        @item.Content
+                                    </td>
+
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", "experiences", new { id = item.Id }, null)
+                                            @Html.ActionLink("Details", "Details", "experiences", new { id = item.Id }, null)
+                                            @Html.ActionLink("Delete", "Delete", "experiences", new { id = item.Id }, null)
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+
+                                            @Html.ActionLink("Details", "Details", new { id = item.Id }, null)
+                                        </td>
+                                    }
+
+                                </tr>
+                            }
+
+                        }
+
+                    </table>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <a href="/experiences/Index" class="btn btn-success">Manage stories</a>
+                    }
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Back to Home", "Index", "Home")
+    </div>
+</div>
+
+
+

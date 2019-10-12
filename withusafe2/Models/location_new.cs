@@ -24,5 +24,13 @@ namespace withusafe2.Models
 
         [Column(TypeName = "numeric")]
         public decimal Longitude { get; set; }
+        [Required]
+        public string Postcode { get; set; }
+        [Required]
+        public string Offence_count { get; set; }
+        [Required]
+        public decimal? safe_count { get; set; }
+        [Required]
+        public decimal? unsafe_count { get; set; }
     }
 }

@@ -23,8 +23,21 @@ namespace withusafe2.Controllers
         }
         public ActionResult Search()
         {
-            
+            ViewBag.active4 = "active";
+            ViewBag.font4 = "font-weight:900;font-style: italic;";
+            return View(db.symptoms.ToList());
+        }
 
+        public ActionResult Search_warning()
+        {
+            ViewBag.active4 = "active";
+            ViewBag.font4 = "font-weight:900;font-style: italic;";
+            return View(db.symptoms.ToList());
+        }
+        public ActionResult Search_error()
+        {
+            ViewBag.active4 = "active";
+            ViewBag.font4 = "font-weight:900;font-style: italic;";
             return View(db.symptoms.ToList());
         }
         //[HttpPost]
